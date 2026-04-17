@@ -1,0 +1,75 @@
+{
+  "slug": "believe-jiu-jitsu",
+  "originalColors": ["#37CA37", "#188BF6", "#2DFB5D", "#000000", "#FFFFFF", "#F5F5F5"],
+  "originalColorSources": {
+    "#37CA37": "CSS variable --primary (strongest signal — this IS the brand green)",
+    "#188BF6": "CSS variable --secondary (default theme var, not used in the navbar/logo/CTAs — DROPPED)",
+    "#2DFB5D": "Sampled from scraped elements (neon variant of the same brand green — consolidated into accent family)",
+    "#000000": "Retained as near-black base",
+    "#FFFFFF": "Retained as text-on-dark",
+    "#F5F5F5": "Retained as muted-surface tone"
+  },
+  "colorAudit": {
+    "contrastIssues": [
+      "No failures — #37CA37 on #0A0A0A hits 8.7:1 (AAA Pass)",
+      "Note: #37CA37 on pure white only hits 2.3:1 — fails large text. Kit uses dark mode to avoid this."
+    ],
+    "harmonyType": "mono-accent (single electric green signal on near-black base — Nike/UFC sportswear system)",
+    "hierarchyStatus": "strong — one electric accent, no competing colors, pure tonal contrast handles the rest",
+    "saturationNotes": "Electric green is high-saturation by design and reads as a signal, not a brand flaw. Neutrals stay pure (no tint) to amplify the green."
+  },
+  "correctedPalette": {
+    "--bg": "#0A0A0A",
+    "--bg-card": "#141414",
+    "--bg-elev": "#1C1C1C",
+    "--text-primary": "#F5F5F5",
+    "--text-muted": "#9A9A9A",
+    "--text-faint": "#555555",
+    "--border": "#262626",
+    "--accent": "#37CA37",
+    "--accent-hover": "#4FE04F",
+    "--accent-pressed": "#2AA32A",
+    "--accent-subtle": "rgba(55, 202, 55, 0.08)",
+    "--accent-glow": "rgba(55, 202, 55, 0.24)",
+    "--signal": "#37CA37"
+  },
+  "mode": "dark",
+  "colorShifts": [
+    "Dropped secondary blue #188BF6 — it was only a default CSS variable, never used in the actual navbar/logo/CTAs",
+    "Pulled the site from light-on-white (GHL template default) to true dark (#0A0A0A) — matches Nike/UFC performance-athletic aesthetic the user requested",
+    "Kept #37CA37 EXACTLY as the brand accent — it's the signature electric green from their CSS and must be preserved",
+    "Added tonal steps (#141414 card, #1C1C1C elev, #262626 border) for dense, gallery-style composition without breaking the mono-accent system",
+    "Reserved #2DFB5D-family brightness for the accent-hover state (#4FE04F) instead of using it as a separate color — keeps the brand single-signal"
+  ],
+  "designIntent": {
+    "direction": "Bold Nike × UFC sportswear gym system — hard edges, condensed display type, oversized numerals, kinetic motion, one electric signal color. Zero gradients, zero sci-fi clichés (no stars, no grids, no nebula).",
+    "alienMotifHandling": "Keep the 👽 as a tiny Easter-egg signature only — footer mark 'I BELIEVE 👽', one hidden repeat in the scrolling marquee, small glyph inside the 'BELIEVE' wordmark treatment. Never use it as hero artwork, never add space/galaxy imagery, never add purple/navy 'space' tones. The alien is the team's inside-joke mark — not a theme.",
+    "typographicMood": "UFC weigh-in board — huge condensed numerals, tight-tracked uppercase, unapologetic scale",
+    "photographyMood": "High-contrast b&w or hard-lit color of rolling, sweat, grips, belts — no stock smiling, no fake intensity"
+  },
+  "fontRecommendation": {
+    "code": "custom-nike-ufc",
+    "display": "Barlow Condensed 800-900 uppercase (Nike sportswear condensed headlines, numerals, tags)",
+    "body": "Inter 400-600 (clean neutral body, schedule grids, form fields)",
+    "mono": "JetBrains Mono 500 (tiny data callouts — class times, belt ranks, file-header style)",
+    "reasoning": "Barlow Condensed has the exact UFC/Nike weigh-in-card energy the user asked for — massive condensed uppercase headlines that feel like fight-night typography. Inter keeps the body copy neutral and readable so the accent carries all the emotional weight. JetBrains Mono for small data labels gives a performance-lab data feel without going full training-lab."
+  },
+  "designStyle": "performance-athletic-skill",
+  "motifRules": {
+    "use": [
+      "Kinetic marquee strips with 'BELIEVE · BELIEVE · 👽 · BELIEVE' — the alien shows up once per 3-4 repeats",
+      "Oversized numbers for class times, ages, belt tiers (weigh-in-card energy)",
+      "Diagonal accents, hard horizontal rules, tight uppercase tags",
+      "Single-color electric-green signal on black — every CTA, every active state",
+      "Tiny 👽 glyph inside the footer 'I BELIEVE' sign-off and inside one scrolling marquee"
+    ],
+    "avoid": [
+      "Any galaxy/nebula/star/constellation imagery",
+      "Purple or navy tones — breaks the single-signal system and triggers the spacey feel",
+      "Multiple alien characters, flying saucers as hero art, UFO decorations",
+      "Gradient backgrounds (performance-athletic is flat, high-contrast)",
+      "Generic BJJ stock photos of white-gi silhouettes on white backgrounds"
+    ]
+  },
+  "cssBlock": ":root {\n  --bg: #0A0A0A;\n  --bg-card: #141414;\n  --bg-elev: #1C1C1C;\n  --text-primary: #F5F5F5;\n  --text-muted: #9A9A9A;\n  --text-faint: #555555;\n  --border: #262626;\n  --accent: #37CA37;\n  --accent-hover: #4FE04F;\n  --accent-pressed: #2AA32A;\n  --accent-subtle: rgba(55, 202, 55, 0.08);\n  --accent-glow: rgba(55, 202, 55, 0.24);\n  --signal: #37CA37;\n}"
+}

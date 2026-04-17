@@ -1,0 +1,134 @@
+{
+  "name": "Believe Jiu Jitsu",
+  "slug": "believe-jiu-jitsu",
+  "website": "https://believejiujitsu.com",
+  "businessType": "Brazilian Jiu-Jitsu Academy (Gi & No-Gi)",
+  "city": "Summerville",
+  "state": "SC",
+  "tagline": "The #1 Jiu Jitsu Academy in Summerville, SC",
+  "siteStructure": {
+    "totalPages": 6,
+    "isSinglePage": false,
+    "pages": [
+      { "url": "https://believejiujitsu.com/", "label": "Home", "slug": "index", "type": "homepage", "screenshotPath": "sites/believe-jiu-jitsu/screenshot-before.png" },
+      { "url": "https://believejiujitsu.com/about", "label": "About", "slug": "about", "type": "about", "screenshotPath": "sites/believe-jiu-jitsu/screenshots/about-before.png" },
+      { "url": "https://believejiujitsu.com/class-schedule", "label": "Class Schedule", "slug": "class-schedule", "type": "schedule", "screenshotPath": "sites/believe-jiu-jitsu/screenshots/class-schedule-before.png" },
+      { "url": "https://believejiujitsu.com/contact", "label": "Contact", "slug": "contact", "type": "contact", "screenshotPath": "sites/believe-jiu-jitsu/screenshots/contact-before.png" },
+      { "url": "https://believejiujitsu.com/privacy-policy", "label": "Privacy Policy", "slug": "privacy-policy", "type": "legal", "screenshotPath": "sites/believe-jiu-jitsu/screenshots/privacy-policy-before.png" },
+      { "url": "https://believejiujitsu.com/terms-and-conditions", "label": "Terms & Conditions", "slug": "terms-and-conditions", "type": "legal", "screenshotPath": "sites/believe-jiu-jitsu/screenshots/terms-and-conditions-before.png" }
+    ]
+  },
+  "pageContent": {
+    "home": {
+      "heroHeadline": "Become an Expert at Self-Defense Using Jiu-Jitsu",
+      "heroSubheadline": "The #1 Brazilian Jiu-Jitsu Academy in Summerville, SC — training kids, teens, and adults in Gi & No-Gi.",
+      "heroCTA": "Book Your Free Class",
+      "trialSteps": [
+        "Click 'Book Your Free Class' and fill out the form",
+        "Pick a date and time on our class calendar",
+        "Get an email and SMS confirmation with all the details"
+      ],
+      "programsOverview": [
+        { "name": "Adults & Teens Jiu-Jitsu", "description": "Gi and No-Gi training. Beginners program covers key components and systems of submission grappling; advanced class goes deeper into finer details and trap-setting." },
+        { "name": "Kids Jiu-Jitsu", "description": "Two programs: Little Kids (Ages 5-7) focused on coordination, basics, and confidence. Big Kids (Ages 8-12) emphasizes skill development, self-defense, and teamwork." }
+      ],
+      "uniformPolicy": "Black and white Gi only, black No-Gi only. White and black uniforms required for basics, fundamentals, and advanced classes. Any color Gi allowed at Open Mat. You don't have to buy our brand — just no other academy logos.",
+      "testimonials": [
+        { "name": "Clay Morton II", "quote": "I've been at Believe BJJ since the doors opened, and love this school/community. Professor Randy and family are the most compassionate human beings. You're not just students — you are family. I BELIEVE!" },
+        { "name": "LeighAnn Klinar", "quote": "Incredible instructors, family friendly, beginner friendly, competitive — all the good things. The professor and his wife are the kindest, most helpful, encouraging people. You won't regret it." },
+        { "name": "Kyra-Nicole Hladczuk", "quote": "I absolutely love it here. As a woman, everyone works to make you feel comfortable and included. Professor Randy is an amazing instructor and Flavia is so welcoming." },
+        { "name": "Jo Levy", "quote": "The best there is. Both the instruction, care and attention given by Professor Randy, Coach Flavia and the Believe Team is impeccable. My kids love attending and are learning incredible life-long skills while having fun." },
+        { "name": "Brenda Barber", "quote": "Our kiddo has been going to Believe Jiu Jitsu since they opened. Professor Randy's teaching style and ability to meet each child where they are at in their abilities has led to Noah being engaged and committed to class." },
+        { "name": "Slade Miller", "quote": "Randy is an outstanding coach. He teaches excellent techniques, and I truly enjoyed every practice I attended. I truly feel his passion in every class he teaches. The team at Believe Jiu Jitsu is fantastic." }
+      ]
+    },
+    "about": {
+      "heading": "About Believe Jiu Jitsu",
+      "subheading": "Learn from the best coaches in Summerville, SC",
+      "headInstructor": {
+        "name": "Professor Randy Gonzales",
+        "role": "Head Instructor & Co-Owner",
+        "lineage": "Black Belt under Professor Danny Stolfi and the world-renowned AOJ team, with previous belts awarded by a 6th Degree Black Belt and World Champion.",
+        "credentials": "Holds a Master's Degree in Science. Brings a unique blend of academic knowledge and practical application — expertise in anatomy, physiology, and range of motion — to his instruction.",
+        "style": "Dynamic teaching style, deep passion for the art, known for meeting each student where they are."
+      },
+      "coOwner": {
+        "name": "Coach Flavia",
+        "role": "Co-Owner"
+      },
+      "philosophy": "Whether you're a casual practitioner or a dedicated competitor, Believe Jiu Jitsu offers a welcoming, family-oriented environment with something for everyone. Conveniently located inside Charleston Family Fitness in Summerville, SC."
+    },
+    "schedule": {
+      "heading": "Class Schedule",
+      "subheading": "Flexible Classes That Fit Real Life",
+      "intro": "Train on multiple days and times without reshaping your schedule. At Believe Jiu-Jitsu, every 60-minute class is more than a workout. You unplug, sharpen focus, build confidence, and release stress. You'll leave clearer, calmer, and stronger than when you arrived.",
+      "days": [
+        { "day": "Monday", "classes": [
+          { "time": "10:00 AM", "name": "Homeschool Gi" },
+          { "time": "12:00 PM", "name": "Adults & Teens (All Levels Gi)" },
+          { "time": "4:15 PM", "name": "Little Kids Class (Ages 5-7) Gi" },
+          { "time": "5:00 PM", "name": "Big Kids Class (Ages 8-13) Gi" },
+          { "time": "6:00 PM", "name": "Adults & Teens (Basics)" },
+          { "time": "7:00 PM", "name": "Advanced Adults & Teens (Blue Belts and Above)" }
+        ]},
+        { "day": "Tuesday", "classes": [
+          { "time": "8:00 PM", "name": "Adults & Teens (No-Gi All Levels)" }
+        ]},
+        { "day": "Wednesday", "classes": [
+          { "time": "10:00 AM", "name": "Homeschool No-Gi" },
+          { "time": "12:00 PM", "name": "Adults & Teens (No-Gi All Levels)" },
+          { "time": "8:00 PM", "name": "Adults & Teens (No-Gi All Levels)" }
+        ]},
+        { "day": "Thursday", "classes": [
+          { "time": "8:00 PM", "name": "Adults & Teens (No-Gi All Levels)" }
+        ]},
+        { "day": "Friday", "classes": [
+          { "time": "10:00 AM", "name": "Homeschool Gi" },
+          { "time": "12:00 PM", "name": "Adults & Teens (All Levels Gi)" },
+          { "time": "4:15 PM", "name": "Little Kids Class (Ages 5-7) Gi" },
+          { "time": "5:00 PM", "name": "Big Kids Class (Ages 8-13) Gi" },
+          { "time": "6:00 PM", "name": "Adults & Teens (Basics)" },
+          { "time": "7:00 PM", "name": "Advanced Adults & Teens (Blue Belts and Above)" }
+        ]},
+        { "day": "Saturday", "classes": [
+          { "time": "9:00 AM", "name": "All Kids Gi" },
+          { "time": "3:00 PM", "name": "Open Mat" }
+        ]}
+      ]
+    },
+    "contact": {
+      "heading": "Contact Believe Jiu Jitsu",
+      "phone": "843-585-3465",
+      "email": "Flavia@believejiujitsu.com",
+      "address": "117 N. Creek Dr. Unit B, Summerville, SC 29486",
+      "googleMapQuery": "117 N. Creek Dr. Unit B, Summerville, SC 29486"
+    }
+  },
+  "programs": [
+    { "id": "adults-teens", "name": "Adults & Teens Jiu-Jitsu", "ages": "13+", "description": "Gi and No-Gi training, from beginner basics to advanced blue-belt-and-above classes." },
+    { "id": "big-kids", "name": "Big Kids (Ages 8-13)", "ages": "8-13", "description": "Skill development, self-defense, and teamwork for older kids." },
+    { "id": "little-kids", "name": "Little Kids (Ages 5-7)", "ages": "5-7", "description": "Coordination, basic techniques, and confidence-building for young children." },
+    { "id": "homeschool", "name": "Homeschool Jiu-Jitsu", "ages": "All ages", "description": "Daytime Gi and No-Gi classes for homeschool students." },
+    { "id": "open-mat", "name": "Open Mat", "ages": "All belts", "description": "Saturday roll session — any color Gi or No-Gi welcome." }
+  ],
+  "socialMedia": {},
+  "brandColors": ["#37CA37", "#188BF6", "#000000", "#FFFFFF", "#F5F5F5"],
+  "brandColorRoles": {
+    "primary": "#37CA37",
+    "secondary": "#188BF6",
+    "background": "#0A0A0A",
+    "accent": "#37CA37",
+    "textDark": "#0A0A0A",
+    "textLight": "#F5F5F5"
+  },
+  "logoUrl": "",
+  "existingImages": {
+    "logo": { "found": false, "url": "", "format": "" },
+    "team": [],
+    "gallery": { "count": 0, "appearsReal": false },
+    "facility": { "count": 0, "description": "" }
+  },
+  "designRecommendation": "performance-athletic-skill",
+  "designReasoning": "Modern Gi + No-Gi academy with strong family AND competitive programs, real AOJ lineage (Professor Randy Gonzales under Danny Stolfi/AOJ), kids-through-adults range. Performance-athletic is the strongest default for combat-sports clients per kit guidance — kinetic, bold, accessible without being moody/prestige. The existing brand is already a bright electric green (#37CA37) + black, which maps perfectly to the performance-athletic 'one electric accent on deep base' system.",
+  "currentSiteIssues": "GoHighLevel template — generic hero, weak typography hierarchy, testimonials visually flat, schedule presented as plain text blocks instead of a readable grid, no visual identity beyond a green CSS variable, no mobile-optimized class schedule, no compelling imagery of actual training."
+}

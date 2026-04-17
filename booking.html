@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Book Your Class — Believe Jiu Jitsu</title>
+  <meta name="description" content="Pick a class time on the Believe Jiu Jitsu calendar. Step 2 of 2 — you're almost done.">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="robots" content="noindex,follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="canonical" href="https://believejiujitsu.com/booking.html">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='11' y='11' width='10' height='10' fill='%2337CA37'/></svg>">
+</head>
+<body>
+
+<!-- SIMPLIFIED NAV — logo only, reduces exit points -->
+<nav class="booking-nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand" style="font-size:1.35rem;">
+      <img src="images/logo/logo.png" alt="" onerror="this.style.display='none'">
+      <span class="mark"></span>
+      <span>Believe</span>
+      <span class="brand-alien">👽</span>
+      <span>BJJ</span>
+    </a>
+    <span style="font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);">Secure Booking · 843-585-3465</span>
+  </div>
+</nav>
+
+<!-- BOOKING HERO -->
+<section class="section booking-hero">
+  <div class="container">
+    <div class="booking-progress" data-gsap="fade-up" aria-label="Booking progress">
+      <div class="step done"><span class="dot">✓</span><span>Info</span></div>
+      <div class="bar done"></div>
+      <div class="step active"><span class="dot">2</span><span>Pick A Time</span></div>
+      <div class="bar"></div>
+      <div class="step"><span class="dot">3</span><span>Confirmed</span></div>
+    </div>
+
+    <div class="booking-heading" data-gsap="fade-up">
+      <h1 id="bookingGreeting">You're Almost Done — <span class="accent">Book Your Free Class.</span></h1>
+      <p>Pick a time below that works for you. Once you book, you're all set — we'll see you on the mat. If you picked the wrong class earlier, switch using the program chips under the calendar.</p>
+    </div>
+
+    <!-- CALENDAR WRAP -->
+    <div class="booking-calendar-wrap" id="bookingCalendars" data-gsap="fade-up">
+
+      <!-- ADULTS & TEENS -->
+      <div class="booking-calendar" data-program="adults-teens" id="calendar-adults-teens">
+        <!-- TODO: Replace this placeholder with the Go High Level embed code for the Adults & Teens Jiu-Jitsu calendar -->
+        <!-- Paste the full iframe / script block from Go High Level below, keeping the surrounding <div class="booking-calendar" data-program="adults-teens"> wrapper intact -->
+        <div class="calendar-placeholder">
+          <h3>GHL Calendar — Adults &amp; Teens Jiu-Jitsu</h3>
+          <p>Paste the Go High Level calendar embed for the <strong>Adults &amp; Teens</strong> program here.<br>
+          Keep the wrapping <code>data-program="adults-teens"</code> div so the modal can route leads correctly.</p>
+        </div>
+      </div>
+
+      <!-- BIG KIDS -->
+      <div class="booking-calendar" data-program="big-kids" id="calendar-big-kids">
+        <!-- TODO: Replace this placeholder with the Go High Level embed code for the Big Kids (8-13) calendar -->
+        <div class="calendar-placeholder">
+          <h3>GHL Calendar — Big Kids (Ages 8-13)</h3>
+          <p>Paste the Go High Level calendar embed for the <strong>Big Kids (8-13)</strong> program here.<br>
+          Keep the wrapping <code>data-program="big-kids"</code> div intact.</p>
+        </div>
+      </div>
+
+      <!-- LITTLE KIDS -->
+      <div class="booking-calendar" data-program="little-kids" id="calendar-little-kids">
+        <!-- TODO: Replace this placeholder with the Go High Level embed code for the Little Kids (5-7) calendar -->
+        <div class="calendar-placeholder">
+          <h3>GHL Calendar — Little Kids (Ages 5-7)</h3>
+          <p>Paste the Go High Level calendar embed for the <strong>Little Kids (5-7)</strong> program here.<br>
+          Keep the wrapping <code>data-program="little-kids"</code> div intact.</p>
+        </div>
+      </div>
+
+      <!-- HOMESCHOOL -->
+      <div class="booking-calendar" data-program="homeschool" id="calendar-homeschool">
+        <!-- TODO: Replace this placeholder with the Go High Level embed code for the Homeschool Jiu-Jitsu calendar -->
+        <div class="calendar-placeholder">
+          <h3>GHL Calendar — Homeschool Jiu-Jitsu</h3>
+          <p>Paste the Go High Level calendar embed for the <strong>Homeschool</strong> program here.<br>
+          Keep the wrapping <code>data-program="homeschool"</code> div intact.</p>
+        </div>
+      </div>
+
+      <!-- OPEN MAT -->
+      <div class="booking-calendar" data-program="open-mat" id="calendar-open-mat">
+        <!-- TODO: Replace this placeholder with the Go High Level embed code for the Open Mat calendar -->
+        <div class="calendar-placeholder">
+          <h3>GHL Calendar — Open Mat</h3>
+          <p>Paste the Go High Level calendar embed for the <strong>Open Mat</strong> session here.<br>
+          Keep the wrapping <code>data-program="open-mat"</code> div intact.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PROGRAM SWITCHER -->
+    <div class="program-switcher" data-gsap="fade-up">
+      <h4>Looking for a different class?</h4>
+      <p>Switch the calendar to match a different program. Your info is already submitted — just pick the right time.</p>
+      <div class="program-chips">
+        <button type="button" class="chip" data-program="adults-teens">Adults &amp; Teens</button>
+        <button type="button" class="chip" data-program="big-kids">Big Kids · 8-13</button>
+        <button type="button" class="chip" data-program="little-kids">Little Kids · 5-7</button>
+        <button type="button" class="chip" data-program="homeschool">Homeschool</button>
+        <button type="button" class="chip" data-program="open-mat">Open Mat</button>
+      </div>
+    </div>
+
+    <!-- TRUST / WHAT TO EXPECT -->
+    <div class="booking-trust" data-gsap="fade-up">
+      <div class="trust-card">
+        <div class="icon"><i data-lucide="map-pin"></i></div>
+        <h4>Where To Go</h4>
+        <p>117 N. Creek Dr. Unit B, Summerville, SC 29486. We're inside Charleston Family Fitness — look for the Believe banner.</p>
+      </div>
+      <div class="trust-card">
+        <div class="icon"><i data-lucide="shirt"></i></div>
+        <h4>What To Wear</h4>
+        <ul>
+          <li>Athletic clothes that cover shoulders &amp; knees</li>
+          <li>No-Gi: rash guard + shorts (or spats)</li>
+          <li>We provide a loaner Gi for your first class</li>
+          <li>Clean, short finger &amp; toe nails</li>
+        </ul>
+      </div>
+      <div class="trust-card">
+        <div class="icon"><i data-lucide="clock"></i></div>
+        <h4>When To Arrive</h4>
+        <p>Show up 10-15 minutes early so we can show you around, get your waiver signed, and pair you with a training partner for warmups.</p>
+      </div>
+    </div>
+
+    <!-- QUESTIONS -->
+    <div style="margin-top: var(--space-2xl); text-align:center; padding:var(--space-lg); border-top:1px solid var(--border);" data-gsap="fade-up">
+      <p style="font-family:var(--ff-mono);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem;">Need Help?</p>
+      <p style="color:var(--text);">Text or call <a href="tel:8435853465" style="color:var(--accent);font-weight:600;">843-585-3465</a> · Email <a href="mailto:Flavia@believejiujitsu.com" style="color:var(--accent);font-weight:600;">Flavia@believejiujitsu.com</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- MINIMAL FOOTER -->
+<footer class="booking-footer">
+  <div class="container">
+    <div>© <span data-year></span> Believe Brazilian Jiu Jitsu · I Believe <span style="color:var(--accent);">👽</span></div>
+    <p class="powered-by">Powered by <a href="https://www.mmamarketingpro.com" target="_blank" rel="noopener">MMA Marketing Pro</a></p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="scripts.js"></script>
+</body>
+</html>

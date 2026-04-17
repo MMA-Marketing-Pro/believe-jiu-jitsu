@@ -1,0 +1,48 @@
+{
+  "origin": "https://believejiujitsu.com",
+  "totalPages": 6,
+  "pages": [
+    {
+      "url": "https://believejiujitsu.com/home",
+      "pathname": "/home",
+      "label": "Home",
+      "slug": "home",
+      "type": "home"
+    },
+    {
+      "url": "https://believejiujitsu.com/about",
+      "pathname": "/about",
+      "label": "About",
+      "slug": "about",
+      "type": "about"
+    },
+    {
+      "url": "https://believejiujitsu.com/class-schedule",
+      "pathname": "/class-schedule",
+      "label": "CLASS SCHEDULE",
+      "slug": "class-schedule",
+      "type": "services"
+    },
+    {
+      "url": "https://believejiujitsu.com/contact",
+      "pathname": "/contact",
+      "label": "Contact",
+      "slug": "contact",
+      "type": "contact"
+    },
+    {
+      "url": "https://believejiujitsu.com/privacy-policy",
+      "pathname": "/privacy-policy",
+      "label": "PRIVACY POLICY",
+      "slug": "privacy-policy",
+      "type": "page"
+    },
+    {
+      "url": "https://believejiujitsu.com/terms-and-conditions",
+      "pathname": "/terms-and-conditions",
+      "label": "TERMS & CONDITIONS",
+      "slug": "terms-and-conditions",
+      "type": "page"
+    }
+  ]
+}

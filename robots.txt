@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /booking.html
+
+Sitemap: https://believejiujitsu.com/sitemap.xml
