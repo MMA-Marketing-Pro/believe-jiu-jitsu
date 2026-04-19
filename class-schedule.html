@@ -8,11 +8,11 @@
   <meta name="theme-color" content="#0A0A0A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <link rel="canonical" href="https://believejiujitsu.com/class-schedule.html">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='11' y='11' width='10' height='10' fill='%2337CA37'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='7' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='12' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='17' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='22' y='9' width='3' height='14' fill='%2337CA37'/></svg>">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://believejiujitsu.com/class-schedule.html">
@@ -66,12 +66,10 @@
 
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <img src="images/logo/logo.png" alt="" onerror="this.style.display='none'">
-      <span class="mark"></span>
+    <a href="index.html" class="nav-brand" aria-label="Believe Jiu Jitsu — home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
       <span>Believe</span>
-      <span class="brand-alien">👽</span>
-      <span>BJJ</span>
+      <span class="sep">BJJ</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -79,7 +77,7 @@
       <li><a href="class-schedule.html" class="active">Schedule</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a class="nav-cta" data-cta="lead-modal" href="#">Free Trial <span class="arrow">→</span></a>
+    <a class="nav-cta" data-cta="lead-modal" href="#">Free Trial <span class="arrow" aria-hidden="true">→</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i data-lucide="menu"></i></button>
   </div>
   <div class="nav-mobile">
@@ -87,7 +85,7 @@
     <a href="about.html">About</a>
     <a href="class-schedule.html" class="active">Schedule</a>
     <a href="contact.html">Contact</a>
-    <a class="nav-cta" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow">→</span></a>
+    <a class="nav-cta" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
     <div class="mobile-meta">
       117 N. Creek Dr. Unit B<br>Summerville, SC 29486<br>
       <a href="tel:8435853465">843-585-3465</a>
@@ -96,154 +94,273 @@
 </nav>
 
 <!-- PAGE HEADER -->
-<header class="page-header">
+<header class="page-header" data-wm="Schedule">
   <div class="container">
-    <div class="page-header-crumb"><a href="index.html">Home</a> <span>/</span> <span>Schedule</span></div>
-    <h1>Flexible classes. <span class="accent">Real life.</span></h1>
-    <p class="page-header-lead">Train on multiple days and times without reshaping your schedule. Every 60-minute class is more than a workout — you unplug, sharpen focus, build confidence, and release stress. You'll leave clearer, calmer, and stronger than when you arrived.</p>
-    <div class="page-header-ctas">
-      <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow">→</span></a>
-      <a class="btn btn-ghost" href="contact.html">Questions? Contact Us</a>
+    <div class="page-crumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Schedule</span></div>
+    <span class="eyebrow"><span class="idx">01 / 03</span>&nbsp;·&nbsp;Weekly schedule</span>
+    <h1 style="margin-top:1rem;">Flexible classes.<br>Real life.</h1>
+    <p class="page-header__lead">Train on multiple days and times without reshaping your schedule. Every 60-minute class is more than a workout — you unplug, sharpen focus, build confidence, and release stress. You'll leave clearer, calmer, and stronger than when you arrived.</p>
+    <div class="page-header__ctas">
+      <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn-link" href="contact.html">Questions? Contact Us <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </header>
 
 <!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>6 Days A Week &middot; 60-Minute Classes &middot; Gi + No-Gi &middot; <span class="ufo">👽</span> &middot; 6 Days A Week &middot; 60-Minute Classes &middot; Gi + No-Gi</span>
-    <span>6 Days A Week &middot; 60-Minute Classes &middot; Gi + No-Gi &middot; <span class="ufo">👽</span> &middot; 6 Days A Week &middot; 60-Minute Classes &middot; Gi + No-Gi</span>
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-row marquee-row--solid marquee-row--r">
+    <span>6 Days a Week<i class="marquee-dot"></i>60-Minute Classes<i class="marquee-dot"></i>Gi + No-Gi<i class="marquee-dot"></i></span>
+    <span>6 Days a Week<i class="marquee-dot"></i>60-Minute Classes<i class="marquee-dot"></i>Gi + No-Gi<i class="marquee-dot"></i></span>
   </div>
 </div>
 
-<!-- SCHEDULE GRID -->
+<!-- WEIGH-IN BOARD -->
 <section class="section">
   <div class="container">
-    <div class="section-head-row" data-gsap="fade-up">
+    <div class="sec-head sec-head--row" data-reveal>
       <div>
-        <span class="eyebrow">Weekly Schedule</span>
-        <h2>Every day. <span class="accent">On time.</span></h2>
+        <span class="eyebrow"><span class="idx">02 / 03</span>&nbsp;·&nbsp;This Week</span>
+        <h2>Every day.<br>On time.</h2>
+        <p style="color:var(--text-muted);font-size:1rem;margin-top:1rem;">Click any class to book that specific program. Your free trial works for any class on the calendar.</p>
       </div>
-      <a class="btn btn-ghost" data-cta="lead-modal" href="#">Book A Class <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" data-cta="lead-modal" href="#">Book A Class <span class="arrow" aria-hidden="true">→</span></a>
     </div>
 
-    <div class="schedule">
-      <article class="day-card" data-gsap="fade-up">
-        <header>
-          <h3>Monday</h3>
-          <span class="count">6 Classes</span>
-        </header>
-        <div class="class-row"><span class="time">10:00 AM</span><span class="name">Homeschool Gi<small>Daytime</small></span></div>
-        <div class="class-row"><span class="time">12:00 PM</span><span class="name">Adults &amp; Teens (All Levels)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">4:15 PM</span><span class="name">Little Kids (Ages 5-7)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">5:00 PM</span><span class="name">Big Kids (Ages 8-13)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">6:00 PM</span><span class="name">Adults &amp; Teens (Basics)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">7:00 PM</span><span class="name">Advanced Adults &amp; Teens<small>Blue Belts &amp; Above</small></span></div>
-      </article>
+    <div class="weigh-board" data-reveal-stagger>
+      <!-- MONDAY -->
+      <div class="weigh-day">
+        <div class="weigh-day__letter">
+          <h3>Mon.</h3>
+          <span class="count">06 · Classes</span>
+        </div>
+        <div class="weigh-day__classes">
+          <button class="weigh-class" data-class-book data-program="homeschool">
+            <span class="weigh-class__time">10:00 AM</span>
+            <span class="weigh-class__name">Homeschool Gi<small>Daytime</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">12:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens (All Levels)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="little-kids">
+            <span class="weigh-class__time">4:15 PM</span>
+            <span class="weigh-class__name">Little Kids (Ages 5-7)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="big-kids">
+            <span class="weigh-class__time">5:00 PM</span>
+            <span class="weigh-class__name">Big Kids (Ages 8-13)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">6:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens (Basics)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">7:00 PM</span>
+            <span class="weigh-class__name">Advanced Adults &amp; Teens<small>Blue Belts &amp; Above</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+        </div>
+      </div>
 
-      <article class="day-card" data-gsap="fade-up">
-        <header>
-          <h3>Tuesday</h3>
-          <span class="count">1 Class</span>
-        </header>
-        <div class="class-row"><span class="time">8:00 PM</span><span class="name">Adults &amp; Teens<small>No-Gi · All Levels</small></span></div>
-      </article>
+      <!-- TUESDAY -->
+      <div class="weigh-day">
+        <div class="weigh-day__letter">
+          <h3>Tue.</h3>
+          <span class="count">01 · Class</span>
+        </div>
+        <div class="weigh-day__classes">
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">8:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+        </div>
+      </div>
 
-      <article class="day-card" data-gsap="fade-up">
-        <header>
-          <h3>Wednesday</h3>
-          <span class="count">3 Classes</span>
-        </header>
-        <div class="class-row"><span class="time">10:00 AM</span><span class="name">Homeschool No-Gi<small>Daytime</small></span></div>
-        <div class="class-row"><span class="time">12:00 PM</span><span class="name">Adults &amp; Teens<small>No-Gi · All Levels</small></span></div>
-        <div class="class-row"><span class="time">8:00 PM</span><span class="name">Adults &amp; Teens<small>No-Gi · All Levels</small></span></div>
-      </article>
+      <!-- WEDNESDAY -->
+      <div class="weigh-day">
+        <div class="weigh-day__letter">
+          <h3>Wed.</h3>
+          <span class="count">03 · Classes</span>
+        </div>
+        <div class="weigh-day__classes">
+          <button class="weigh-class" data-class-book data-program="homeschool">
+            <span class="weigh-class__time">10:00 AM</span>
+            <span class="weigh-class__name">Homeschool No-Gi<small>Daytime</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">12:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">8:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+        </div>
+      </div>
 
-      <article class="day-card" data-gsap="fade-up">
-        <header>
-          <h3>Thursday</h3>
-          <span class="count">1 Class</span>
-        </header>
-        <div class="class-row"><span class="time">8:00 PM</span><span class="name">Adults &amp; Teens<small>No-Gi · All Levels</small></span></div>
-      </article>
+      <!-- THURSDAY -->
+      <div class="weigh-day">
+        <div class="weigh-day__letter">
+          <h3>Thu.</h3>
+          <span class="count">01 · Class</span>
+        </div>
+        <div class="weigh-day__classes">
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">8:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+        </div>
+      </div>
 
-      <article class="day-card" data-gsap="fade-up">
-        <header>
-          <h3>Friday</h3>
-          <span class="count">6 Classes</span>
-        </header>
-        <div class="class-row"><span class="time">10:00 AM</span><span class="name">Homeschool Gi<small>Daytime</small></span></div>
-        <div class="class-row"><span class="time">12:00 PM</span><span class="name">Adults &amp; Teens (All Levels)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">4:15 PM</span><span class="name">Little Kids (Ages 5-7)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">5:00 PM</span><span class="name">Big Kids (Ages 8-13)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">6:00 PM</span><span class="name">Adults &amp; Teens (Basics)<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">7:00 PM</span><span class="name">Advanced Adults &amp; Teens<small>Blue Belts &amp; Above</small></span></div>
-      </article>
+      <!-- FRIDAY -->
+      <div class="weigh-day">
+        <div class="weigh-day__letter">
+          <h3>Fri.</h3>
+          <span class="count">06 · Classes</span>
+        </div>
+        <div class="weigh-day__classes">
+          <button class="weigh-class" data-class-book data-program="homeschool">
+            <span class="weigh-class__time">10:00 AM</span>
+            <span class="weigh-class__name">Homeschool Gi<small>Daytime</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">12:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens (All Levels)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="little-kids">
+            <span class="weigh-class__time">4:15 PM</span>
+            <span class="weigh-class__name">Little Kids (Ages 5-7)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="big-kids">
+            <span class="weigh-class__time">5:00 PM</span>
+            <span class="weigh-class__name">Big Kids (Ages 8-13)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">6:00 PM</span>
+            <span class="weigh-class__name">Adults &amp; Teens (Basics)<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="adults-teens">
+            <span class="weigh-class__time">7:00 PM</span>
+            <span class="weigh-class__name">Advanced Adults &amp; Teens<small>Blue Belts &amp; Above</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+        </div>
+      </div>
 
-      <article class="day-card" data-gsap="fade-up">
-        <header>
-          <h3>Saturday</h3>
-          <span class="count">2 Classes</span>
-        </header>
-        <div class="class-row"><span class="time">9:00 AM</span><span class="name">All Kids Class<small>Gi</small></span></div>
-        <div class="class-row"><span class="time">3:00 PM</span><span class="name">Open Mat<small>Any Color Gi or No-Gi</small></span></div>
-      </article>
+      <!-- SATURDAY -->
+      <div class="weigh-day">
+        <div class="weigh-day__letter">
+          <h3>Sat.</h3>
+          <span class="count">02 · Classes</span>
+        </div>
+        <div class="weigh-day__classes">
+          <button class="weigh-class" data-class-book data-program="big-kids">
+            <span class="weigh-class__time">9:00 AM</span>
+            <span class="weigh-class__name">All Kids Class<small>Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+          <button class="weigh-class" data-class-book data-program="open-mat">
+            <span class="weigh-class__time">3:00 PM</span>
+            <span class="weigh-class__name">Open Mat<small>Any Color Gi or No-Gi</small></span>
+            <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
+          </button>
+        </div>
+      </div>
 
-      <article class="day-card" data-gsap="fade-up" style="background:transparent;border-style:dashed;">
-        <header>
-          <h3 style="color:var(--text-muted);">Sunday</h3>
-          <span class="count" style="color:var(--text-faint);">Rest Day</span>
-        </header>
-        <div class="class-row" style="padding:var(--space-md) 0;"><span class="name" style="color:var(--text-muted);">Recover. Study film. Roll tomorrow.</span></div>
-      </article>
+      <!-- SUNDAY — REST -->
+      <div class="weigh-day weigh-day--rest">
+        <div class="weigh-day__letter">
+          <h3>Sun.</h3>
+          <span class="count">Rest Day</span>
+        </div>
+        <div class="weigh-day__classes">
+          <div class="weigh-rest">Recover. Study film. Come back stronger Monday.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- INFO / LEVELS -->
+<!-- TRACK GUIDE -->
 <section class="section section-tight">
   <div class="container">
-    <div class="section-head" data-gsap="fade-up">
-      <span class="eyebrow">How To Read The Schedule</span>
-      <h2>Pick your <span class="accent">track.</span></h2>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="idx">03 / 03</span>&nbsp;·&nbsp;How To Read The Schedule</span>
+      <h2>Pick your track.</h2>
     </div>
-    <div class="program-grid" data-gsap="fade-up">
-      <div class="day-card" style="aspect-ratio:auto;">
-        <header><h3 style="font-size:1.5rem;">Adults &amp; Teens</h3></header>
-        <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.65;">Ages 13+. Basics covers the key systems of submission grappling. Advanced (Blue Belts &amp; Above) goes deeper into finer details and trap-setting. Gi and No-Gi both available.</p>
-        <a class="btn btn-ghost" data-cta="lead-modal" data-program="adults-teens" href="#" style="margin-top:auto;">Book Trial <span class="arrow">→</span></a>
-      </div>
-      <div class="day-card" style="aspect-ratio:auto;">
-        <header><h3 style="font-size:1.5rem;">Big Kids · 8-13</h3></header>
-        <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.65;">Skill development, self-defense, and teamwork. Helps older kids grow physically and mentally in a supportive, structured environment.</p>
-        <a class="btn btn-ghost" data-cta="lead-modal" data-program="big-kids" href="#" style="margin-top:auto;">Book Trial <span class="arrow">→</span></a>
-      </div>
-      <div class="day-card" style="aspect-ratio:auto;">
-        <header><h3 style="font-size:1.5rem;">Little Kids · 5-7</h3></header>
-        <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.65;">Fun, age-appropriate drills. Builds coordination, basic technique, and the confidence to try hard things.</p>
-        <a class="btn btn-ghost" data-cta="lead-modal" data-program="little-kids" href="#" style="margin-top:auto;">Book Trial <span class="arrow">→</span></a>
-      </div>
-      <div class="day-card" style="aspect-ratio:auto;">
-        <header><h3 style="font-size:1.5rem;">Homeschool</h3></header>
-        <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.65;">Daytime classes for homeschool students. Gi (Mon / Fri) and No-Gi (Wed) at 10:00 AM.</p>
-        <a class="btn btn-ghost" data-cta="lead-modal" data-program="homeschool" href="#" style="margin-top:auto;">Book Trial <span class="arrow">→</span></a>
-      </div>
-      <div class="day-card" style="aspect-ratio:auto;">
-        <header><h3 style="font-size:1.5rem;">Open Mat</h3></header>
-        <p style="color:var(--text-muted);font-size:0.95rem;line-height:1.65;">Saturday 3:00 PM. Any color Gi or No-Gi welcome. Roll with the team, test your game, ask questions.</p>
-        <a class="btn btn-ghost" data-cta="lead-modal" data-program="open-mat" href="#" style="margin-top:auto;">Book Trial <span class="arrow">→</span></a>
+
+    <div class="programs-bento" data-reveal-stagger>
+      <a class="pgm pgm--sm" data-cta="lead-modal" data-program="adults-teens" href="#">
+        <div class="pgm__meta">
+          <span class="pgm__tag">01 · Ages 13+</span>
+          <h3>Adults &amp; Teens</h3>
+          <p class="text-muted">Basics covers the key systems of submission grappling. Advanced (Blue Belts &amp; Above) goes deeper into finer details and trap-setting. Gi and No-Gi both available.</p>
+          <span class="pgm__cta">Book <span class="arrow" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <a class="pgm pgm--sm" data-cta="lead-modal" data-program="big-kids" href="#">
+        <div class="pgm__meta">
+          <span class="pgm__tag">02 · Ages 8-13</span>
+          <h3>Big Kids</h3>
+          <p class="text-muted">Skill development, self-defense, and teamwork. Older kids grow physically and mentally in a structured, supportive environment.</p>
+          <span class="pgm__cta">Book <span class="arrow" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <a class="pgm pgm--sm" data-cta="lead-modal" data-program="little-kids" href="#">
+        <div class="pgm__meta">
+          <span class="pgm__tag">03 · Ages 5-7</span>
+          <h3>Little Kids</h3>
+          <p class="text-muted">Fun, age-appropriate drills. Builds coordination, basic technique, and the confidence to try hard things.</p>
+          <span class="pgm__cta">Book <span class="arrow" aria-hidden="true">→</span></span>
+        </div>
+      </a>
+      <div class="pgm-strip">
+        <a class="pgm-strip__cell" data-cta="lead-modal" data-program="homeschool" href="#">
+          <span class="pgm-strip__idx">04</span>
+          <div class="pgm-strip__info">
+            <h4>Homeschool</h4>
+            <small>Mon / Wed / Fri · 10:00 AM · Gi &amp; No-Gi</small>
+          </div>
+          <span class="pgm-strip__cta">Book Trial <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+        <a class="pgm-strip__cell" data-cta="lead-modal" data-program="open-mat" href="#">
+          <span class="pgm-strip__idx">05</span>
+          <div class="pgm-strip__info">
+            <h4>Open Mat</h4>
+            <small>Saturday · 3:00 PM · Any color Gi or No-Gi</small>
+          </div>
+          <span class="pgm-strip__cta">Roll With Us <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CLOSING CTA -->
-<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container" style="text-align:center;" data-gsap="fade-up">
-    <span class="eyebrow" style="justify-content:center;display:inline-flex;">Plan Your Week</span>
-    <h2 style="font-size:clamp(2.25rem, 5vw, 4.75rem); line-height:0.95; margin:1rem auto 1rem; max-width:20ch;">Pick a day. <span style="color:var(--accent);">We'll see you there.</span></h2>
-    <p style="color:var(--text-muted); max-width:56ch; margin:0 auto 2rem;">Your first class is free. Use the free trial to try any class on the schedule.</p>
-    <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Your Free Class <span class="arrow">→</span></a>
+<!-- CLOSING -->
+<section class="closing">
+  <div class="closing__inner container" data-reveal>
+    <span class="eyebrow">Plan Your Week</span>
+    <h2>Pick a day.<br><span class="text-accent">We'll see you there.</span></h2>
+    <p>Your first class is free. Use the free trial on any class on the schedule.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Your Free Class <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -253,10 +370,9 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a class="nav-brand" href="index.html">
-          <span class="mark"></span>
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
           <span>Believe</span>
-          <span class="brand-alien">👽</span>
-          <span>BJJ</span>
+          <span class="sep">BJJ</span>
         </a>
         <p>Summerville's #1 Brazilian Jiu-Jitsu academy. Kids, teens, adults. Gi and No-Gi. Training led by Professor Randy Gonzales — AOJ Black Belt under Danny Stolfi.</p>
       </div>
@@ -290,10 +406,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-signoff">© <span data-year></span> Believe Brazilian Jiu Jitsu · I Believe <span class="alien">👽</span></div>
+      <div class="footer-signoff">© <span data-year></span> <span class="sep">·</span> <strong>Believe Brazilian Jiu Jitsu</strong> <span class="sep">·</span> I Believe.</div>
       <p class="powered-by">Powered by <a href="https://www.mmamarketingpro.com" target="_blank" rel="noopener">MMA Marketing Pro</a></p>
     </div>
-    <nav aria-label="Legal" style="margin-top:var(--space-md);display:flex;gap:1.5rem;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-faint);">
+    <nav aria-label="Legal" class="footer-legal">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
     </nav>
@@ -305,9 +421,9 @@
   <div class="lead-modal__backdrop"></div>
   <div class="lead-modal__card">
     <div class="lead-modal__header">
-      <span class="step-of">Step 1 of 2</span>
+      <span class="step-of">Step 01 / 02 · Your Info</span>
       <h3 id="leadModalTitle">Claim Your Free Trial Class</h3>
-      <p>Drop your info. Next, pick a time on the class calendar.</p>
+      <p>Drop your info. Next screen, pick a time on the class calendar.</p>
       <button type="button" class="lead-modal__close" data-modal-close aria-label="Close"><i data-lucide="x"></i></button>
     </div>
     <form id="leadForm" class="lead-modal__body" novalidate>
@@ -343,8 +459,8 @@
           <option value="open-mat">Open Mat</option>
         </select>
       </div>
-      <button type="submit" class="lead-modal__submit">Continue To Booking <span class="arrow">→</span></button>
-      <div class="lead-modal__foot">Step 1 of 2 · Your info stays with us</div>
+      <button type="submit" class="lead-modal__submit">Continue To Booking <span class="arrow" aria-hidden="true">→</span></button>
+      <div class="lead-modal__foot">Step 01 / 02 · Your info stays with us</div>
     </form>
   </div>
 </div>

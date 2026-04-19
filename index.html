@@ -8,11 +8,11 @@
   <meta name="theme-color" content="#0A0A0A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <link rel="canonical" href="https://believejiujitsu.com/">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='11' y='11' width='10' height='10' fill='%2337CA37'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='7' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='12' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='17' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='22' y='9' width='3' height='14' fill='%2337CA37'/></svg>">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://believejiujitsu.com/">
@@ -99,14 +99,15 @@
 </head>
 <body>
 
+<!-- ============================================================
+     NAV
+     ============================================================ -->
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <img src="images/logo/logo.png" alt="" onerror="this.style.display='none'">
-      <span class="mark"></span>
+    <a href="index.html" class="nav-brand" aria-label="Believe Jiu Jitsu — home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
       <span>Believe</span>
-      <span class="brand-alien">👽</span>
-      <span>BJJ</span>
+      <span class="sep">BJJ</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
@@ -114,7 +115,7 @@
       <li><a href="class-schedule.html">Schedule</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a class="nav-cta" data-cta="lead-modal" href="#">Free Trial <span class="arrow">→</span></a>
+    <a class="nav-cta" data-cta="lead-modal" href="#">Free Trial <span class="arrow" aria-hidden="true">→</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i data-lucide="menu"></i></button>
   </div>
   <div class="nav-mobile">
@@ -122,7 +123,7 @@
     <a href="about.html">About</a>
     <a href="class-schedule.html">Schedule</a>
     <a href="contact.html">Contact</a>
-    <a class="nav-cta" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow">→</span></a>
+    <a class="nav-cta" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
     <div class="mobile-meta">
       117 N. Creek Dr. Unit B<br>Summerville, SC 29486<br>
       <a href="tel:8435853465">843-585-3465</a>
@@ -130,268 +131,543 @@
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ============================================================
+     01 · HERO — asymmetric split, CTA above fold
+     ============================================================ -->
 <section class="hero">
-  <div class="hero-bg">
-    <img src="https://picsum.photos/seed/believe-bjj-hero/1920/1200"
-         data-local="images/hero/hero-home.jpg"
-         alt="Rolling on the mat at Believe Jiu Jitsu in Summerville, SC"
-         width="1920" height="1200"
-         loading="eager" fetchpriority="high" decoding="async">
-  </div>
-  <div class="container hero-inner">
-    <span class="hero-kicker"><span class="dot"></span>Summerville, SC · EST. 2024 <span class="divider"></span>AOJ LINEAGE</span>
-    <h1 class="display">Train Like You <span class="accent">Believe.</span></h1>
-    <p class="hero-lead">The #1 Brazilian Jiu-Jitsu academy in Summerville, South Carolina. Gi &amp; No-Gi. Adults, teens, and kids from age 5 up. Led by Professor Randy Gonzales — AOJ Black Belt under Professor Danny Stolfi.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Your Free Class <span class="arrow">→</span></a>
-      <a class="btn btn-ghost" href="class-schedule.html">View Schedule</a>
+  <div class="container container--wide">
+    <div class="hero-grid">
+
+      <div class="hero-lead-col">
+        <div class="hero-kicker">
+          <span class="bullet" aria-hidden="true"></span>
+          <span><strong>01 / 11</strong>&nbsp;·&nbsp;Summerville · SC</span>
+          <span>Est. 2024</span>
+          <span>AOJ Lineage</span>
+        </div>
+
+        <h1 class="hero-title display">
+          <span class="mask-line"><span class="stack">Train</span></span>
+          <span class="mask-line"><span class="stack">Like You</span></span>
+          <span class="mask-line"><span class="stack accent">Believe.</span></span>
+        </h1>
+
+        <p class="hero-sub">The #1 Brazilian Jiu-Jitsu academy in Summerville, South Carolina. Gi &amp; No-Gi. Adults, teens, and kids from age five up. Led by Professor Randy Gonzales — AOJ Black Belt under Professor Danny Stolfi.</p>
+
+        <div class="hero-cta-row">
+          <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Your Free Class <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn-link" href="class-schedule.html">View Schedule <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="hero-trust">
+          <span class="star-row" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <span>5.0 on Google · 6 reviews from real students</span>
+        </div>
+      </div>
+
+      <div class="hero-visual-col">
+        <div class="hero-portrait">
+          <img src="https://picsum.photos/seed/believe-bjj-hero/1100/1400"
+               data-local="images/hero/hero-home.jpg"
+               alt="Rolling on the mat at Believe Jiu Jitsu in Summerville, SC"
+               width="1100" height="1400"
+               loading="eager" fetchpriority="high" decoding="async">
+          <span class="hero-portrait__tag">Prof. Randy Gonzales · Head Instructor</span>
+          <span class="hero-portrait__coords">32.0185°N<br>80.1757°W</span>
+        </div>
+        <aside class="hero-stats" aria-hidden="true">
+          <div>
+            <div class="hero-stat__num"><span data-count="16">16</span>+</div>
+            <div class="hero-stat__lbl">Classes / Week</div>
+          </div>
+          <div>
+            <div class="hero-stat__num">5.0</div>
+            <div class="hero-stat__lbl">Google Rating</div>
+          </div>
+          <div>
+            <div class="hero-stat__num">Gi + No-Gi</div>
+            <div class="hero-stat__lbl">Both Styles</div>
+          </div>
+        </aside>
+      </div>
     </div>
+
+    <!-- Mobile/tablet meta row (hidden ≥1280px where stats live on the right) -->
     <div class="hero-meta">
       <div class="hero-meta-item">
-        <div class="num"><span data-count="16">16</span><span class="unit">+</span></div>
-        <div class="lbl">Classes / Week</div>
+        <div class="n"><span data-count="16">16</span>+</div>
+        <div class="l">Classes / Week</div>
       </div>
       <div class="hero-meta-item">
-        <div class="num"><span data-count="5">5</span><span class="unit">★</span></div>
-        <div class="lbl">Google Rating</div>
+        <div class="n">5.0</div>
+        <div class="l">Google Rating</div>
       </div>
       <div class="hero-meta-item">
-        <div class="num">Gi<span class="unit"> +</span> NoGi</div>
-        <div class="lbl">Both Styles, One Roof</div>
+        <div class="n">Gi&nbsp;+&nbsp;NoGi</div>
+        <div class="l">Both Styles</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Train &middot; Believe &middot; Roll &middot; <span class="ufo">👽</span> &middot; Train &middot; Believe &middot; Roll &middot; Train &middot; Believe &middot; Roll &middot; <span class="ufo">👽</span> &middot; Train &middot; Believe &middot; Roll</span>
-    <span>Train &middot; Believe &middot; Roll &middot; <span class="ufo">👽</span> &middot; Train &middot; Believe &middot; Roll &middot; Train &middot; Believe &middot; Roll &middot; <span class="ufo">👽</span> &middot; Train &middot; Believe &middot; Roll</span>
+<!-- ============================================================
+     MARQUEE BAND — outline + solid dual direction
+     ============================================================ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-row marquee-row--outline marquee-row--l">
+    <span>Believe<i class="marquee-dot"></i>Roll<i class="marquee-dot"></i>Train<i class="marquee-dot"></i>Compete<i class="marquee-dot"></i>Repeat<i class="marquee-dot"></i></span>
+    <span>Believe<i class="marquee-dot"></i>Roll<i class="marquee-dot"></i>Train<i class="marquee-dot"></i>Compete<i class="marquee-dot"></i>Repeat<i class="marquee-dot"></i></span>
+    <span>Believe<i class="marquee-dot"></i>Roll<i class="marquee-dot"></i>Train<i class="marquee-dot"></i>Compete<i class="marquee-dot"></i>Repeat<i class="marquee-dot"></i></span>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
-<section class="section">
+<!-- ============================================================
+     02 · FREE-TRIAL FUNNEL — sticky stack
+     ============================================================ -->
+<section class="funnel-intro">
   <div class="container">
-    <div class="section-head" data-gsap="fade-up">
-      <span class="eyebrow">How The Free Trial Works</span>
-      <h2>Three steps. <span class="accent">On the mat.</span></h2>
-      <p>No contracts, no pressure. Come in, grip up, and find out if this is where you want to train.</p>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="idx">02 / 11</span>&nbsp;·&nbsp;How the free trial works</span>
+      <h2>Three steps.<br>On the mat.</h2>
+      <p>No contracts. No pressure. Show up, grip up, and find out if this is where you want to train.</p>
     </div>
 
-    <div class="steps-grid" data-gsap="fade-up">
-      <div class="step-card">
-        <span class="step-num">01</span>
-        <h3>Claim Your Spot</h3>
-        <p>Hit "Book Your Free Class" and drop your info. Takes 30 seconds.</p>
-      </div>
-      <div class="step-card">
-        <span class="step-num">02</span>
-        <h3>Pick A Class Time</h3>
-        <p>Choose a date and time from our live class calendar — adults, kids, Gi, or No-Gi.</p>
-      </div>
-      <div class="step-card">
-        <span class="step-num">03</span>
-        <h3>Show Up &amp; Roll</h3>
-        <p>You'll get email + SMS confirmation. Arrive 10 minutes early and we'll take care of the rest.</p>
-      </div>
+    <div class="funnel-stack">
+      <article class="funnel-card" data-reveal>
+        <div class="funnel-card__num" aria-hidden="true">01</div>
+        <div class="funnel-card__body">
+          <span class="eyebrow"><span class="idx">Step 01</span>&nbsp;·&nbsp;30 seconds</span>
+          <h3>Claim your spot.</h3>
+          <p>Hit "Book Your Free Class" and drop your info. Name, email, phone, which class — done. No contracts, no card required.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" data-cta="lead-modal" href="#">Start My Trial <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="funnel-card" data-reveal>
+        <div class="funnel-card__num" aria-hidden="true">02</div>
+        <div class="funnel-card__body">
+          <span class="eyebrow"><span class="idx">Step 02</span>&nbsp;·&nbsp;Pick a time</span>
+          <h3>Choose a class time.</h3>
+          <p>Adults, kids, Gi, or No-Gi — pick a date and time from our live class calendar. You'll get an email and SMS the second you book.</p>
+          <div class="cta-row">
+            <a class="btn-link" href="class-schedule.html">See The Weekly Schedule <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+
+      <article class="funnel-card" data-reveal>
+        <div class="funnel-card__num" aria-hidden="true">03</div>
+        <div class="funnel-card__body">
+          <span class="eyebrow"><span class="idx">Step 03</span>&nbsp;·&nbsp;On the mat</span>
+          <h3>Show up &amp; roll.</h3>
+          <p>Arrive ten minutes early. We'll get you a loaner Gi if you need one, pair you with a partner, and walk you through warmups. That's it — you're training.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Your Free Class <span class="arrow" aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- PROGRAMS -->
+<!-- ============================================================
+     03 · PROGRAMS — editorial bento
+     ============================================================ -->
 <section class="section section-tight">
-  <div class="container">
-    <div class="section-head-row" data-gsap="fade-up">
+  <div class="container container--wide">
+    <div class="sec-head sec-head--row" data-reveal>
       <div>
-        <span class="eyebrow">Our Programs</span>
-        <h2>Built for every <span class="accent">beginner</span>. Sharpened for every <span class="accent">competitor</span>.</h2>
+        <span class="eyebrow"><span class="idx">03 / 11</span>&nbsp;·&nbsp;Programs</span>
+        <h2>Built for beginners.<br>Sharpened for competitors.</h2>
       </div>
-      <a class="btn btn-ghost" href="class-schedule.html">Full Schedule <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="class-schedule.html">Full Schedule <span class="arrow" aria-hidden="true">→</span></a>
     </div>
 
-    <div class="program-grid">
-      <a class="program-card" data-gsap="fade-up" data-cta="lead-modal" data-program="adults-teens" href="#">
-        <div class="img"><img src="https://picsum.photos/seed/believe-bjj-adults/900/1200" data-local="images/gallery/adults-teens.jpg" alt="Adults and teens rolling in the Gi at Believe Jiu Jitsu" width="900" height="1200" loading="lazy" decoding="async"></div>
-        <span class="tag"><span style="width:6px;height:6px;background:#000;border-radius:50%;display:inline-block;"></span>Ages 13+</span>
-        <div class="divider"></div>
-        <h3>Adults &amp; Teens<br>Jiu-Jitsu</h3>
-        <p>Gi and No-Gi. Beginners learn the key systems of submission grappling. Advanced class dives into the finer details and trap-setting.</p>
-        <span class="program-cta">Book Free Trial <span class="arrow">→</span></span>
+    <div class="programs-bento" data-reveal-stagger>
+      <a class="pgm pgm--feature" data-cta="lead-modal" data-program="adults-teens" href="#">
+        <div class="pgm__img"><img src="https://picsum.photos/seed/believe-bjj-adults/1400/900" data-local="images/gallery/adults-teens.jpg" alt="Adults and teens rolling at Believe Jiu Jitsu" width="1400" height="900" loading="lazy" decoding="async"></div>
+        <div class="pgm__meta">
+          <span class="pgm__tag">01 · Ages 13+</span>
+          <h3>Adults &amp; Teens<br>Jiu-Jitsu</h3>
+          <p class="text-muted">Gi and No-Gi. Beginners learn the key systems of submission grappling. Advanced class (blue belts and up) goes deeper into finer details and trap-setting.</p>
+          <span class="pgm__cta">Book Free Trial <span class="arrow" aria-hidden="true">→</span></span>
+        </div>
       </a>
 
-      <a class="program-card" data-gsap="fade-up" data-cta="lead-modal" data-program="big-kids" href="#">
-        <div class="img"><img src="https://picsum.photos/seed/believe-bjj-big-kids/900/1200" data-local="images/gallery/big-kids.jpg" alt="Big Kids (ages 8-13) Brazilian Jiu-Jitsu class" width="900" height="1200" loading="lazy" decoding="async"></div>
-        <span class="tag">Ages 8-13</span>
-        <div class="divider"></div>
-        <h3>Big Kids<br>Jiu-Jitsu</h3>
-        <p>Skill development, self-defense, and teamwork. Helps older kids grow physically and mentally in a supportive environment.</p>
-        <span class="program-cta">Book Free Trial <span class="arrow">→</span></span>
+      <a class="pgm pgm--sm" data-cta="lead-modal" data-program="big-kids" href="#">
+        <div class="pgm__img"><img src="https://picsum.photos/seed/believe-bjj-big-kids/900/1200" data-local="images/gallery/big-kids.jpg" alt="Big Kids (ages 8-13) jiu-jitsu class" width="900" height="1200" loading="lazy" decoding="async"></div>
+        <div class="pgm__meta">
+          <span class="pgm__tag">02 · Ages 8-13</span>
+          <h3>Big Kids</h3>
+          <p class="text-muted">Skill development, self-defense, and teamwork for older kids.</p>
+          <span class="pgm__cta">Book <span class="arrow" aria-hidden="true">→</span></span>
+        </div>
       </a>
 
-      <a class="program-card" data-gsap="fade-up" data-cta="lead-modal" data-program="little-kids" href="#">
-        <div class="img"><img src="https://picsum.photos/seed/believe-bjj-littles/900/1200" data-local="images/gallery/little-kids.jpg" alt="Little Kids (ages 5-7) beginner Jiu-Jitsu class" width="900" height="1200" loading="lazy" decoding="async"></div>
-        <span class="tag">Ages 5-7</span>
-        <div class="divider"></div>
-        <h3>Little Kids<br>Jiu-Jitsu</h3>
-        <p>Fun, age-appropriate drills. Builds coordination, basic technique, and the confidence to try hard things.</p>
-        <span class="program-cta">Book Free Trial <span class="arrow">→</span></span>
+      <a class="pgm pgm--sm" data-cta="lead-modal" data-program="little-kids" href="#">
+        <div class="pgm__img"><img src="https://picsum.photos/seed/believe-bjj-littles/900/1200" data-local="images/gallery/little-kids.jpg" alt="Little Kids (ages 5-7) beginner jiu-jitsu class" width="900" height="1200" loading="lazy" decoding="async"></div>
+        <div class="pgm__meta">
+          <span class="pgm__tag">03 · Ages 5-7</span>
+          <h3>Little Kids</h3>
+          <p class="text-muted">Fun, age-appropriate drills. Coordination, basics, and confidence.</p>
+          <span class="pgm__cta">Book <span class="arrow" aria-hidden="true">→</span></span>
+        </div>
       </a>
+
+      <div class="pgm-strip">
+        <a class="pgm-strip__cell" data-cta="lead-modal" data-program="homeschool" href="#">
+          <span class="pgm-strip__idx">04</span>
+          <div class="pgm-strip__info">
+            <h4>Homeschool Jiu-Jitsu</h4>
+            <small>Mon / Wed / Fri · 10:00 AM · Gi &amp; No-Gi</small>
+          </div>
+          <span class="pgm-strip__cta">Book Trial <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+        <a class="pgm-strip__cell" data-cta="lead-modal" data-program="open-mat" href="#">
+          <span class="pgm-strip__idx">05</span>
+          <div class="pgm-strip__info">
+            <h4>Open Mat</h4>
+            <small>Saturday · 3:00 PM · Any color Gi or No-Gi</small>
+          </div>
+          <span class="pgm-strip__cta">Roll With Us <span class="arrow" aria-hidden="true">→</span></span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE 2 -->
-<div class="marquee marquee-dark" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Professor Randy Gonzales &middot; AOJ Black Belt &middot; Master's in Science &middot; <span class="ufo">👽</span> &middot; Professor Randy Gonzales &middot; AOJ Black Belt &middot; Master's in Science</span>
-    <span>Professor Randy Gonzales &middot; AOJ Black Belt &middot; Master's in Science &middot; <span class="ufo">👽</span> &middot; Professor Randy Gonzales &middot; AOJ Black Belt &middot; Master's in Science</span>
+<!-- ============================================================
+     MARQUEE BAND 2 — solid on dark
+     ============================================================ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-row marquee-row--solid marquee-row--r">
+    <span>Prof. Randy Gonzales<i class="marquee-dot"></i>AOJ Black Belt<i class="marquee-dot"></i>Master of Science<i class="marquee-dot"></i>Summerville SC<i class="marquee-dot"></i></span>
+    <span>Prof. Randy Gonzales<i class="marquee-dot"></i>AOJ Black Belt<i class="marquee-dot"></i>Master of Science<i class="marquee-dot"></i>Summerville SC<i class="marquee-dot"></i></span>
   </div>
 </div>
 
-<!-- INSTRUCTOR SPOTLIGHT -->
+<!-- ============================================================
+     04 · INSTRUCTOR — magazine feature
+     ============================================================ -->
 <section class="section">
   <div class="container">
-    <div class="instructor" data-gsap="fade-up">
-      <div class="instructor-photo">
-        <img src="https://picsum.photos/seed/believe-bjj-randy/900/1200" data-local="images/team/randy-gonzales.jpg" alt="Professor Randy Gonzales — Head Instructor at Believe Jiu Jitsu" width="900" height="1200" loading="lazy" decoding="async">
-        <div class="accent-flag">Head Instructor</div>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="idx">04 / 11</span>&nbsp;·&nbsp;Head Instructor</span>
+      <h2>Meet the professor.</h2>
+    </div>
+    <div class="instructor" data-reveal>
+      <div class="instructor__visual">
+        <img src="https://picsum.photos/seed/believe-bjj-randy/1100/1400" data-local="images/team/randy-gonzales.jpg" alt="Professor Randy Gonzales — Head Instructor at Believe Jiu Jitsu" width="1100" height="1400" loading="lazy" decoding="async" data-parallax>
+        <span class="instructor__flag"><em>Head Instructor</em>&nbsp;·&nbsp;Co-Owner</span>
+        <span class="instructor__caption">Photo · Academy Mat, Summerville SC</span>
       </div>
-      <div class="instructor-info">
-        <span class="eyebrow">Meet the Professor</span>
-        <h2>Professor Randy <span class="accent">Gonzales</span></h2>
-        <span class="role">Head Instructor · Co-Owner</span>
-        <p>Randy earned his Black Belt under Professor Danny Stolfi and the world-renowned AOJ team, with previous belts awarded by a 6th Degree Black Belt and World Champion. A Master's degree in Science brings a unique blend of academic knowledge — anatomy, physiology, range of motion — to his teaching.</p>
+      <div class="instructor__body">
+        <h2 class="instructor__name"><span>Randy</span><span>Gonzales.</span></h2>
+        <span class="instructor__role">Black Belt · AOJ / Prof. Danny Stolfi</span>
+        <p>Professor Randy earned his Black Belt under Professor Danny Stolfi and the world-renowned AOJ team, with previous belts awarded by a 6th Degree Black Belt and World Champion. A Master's degree in Science brings a different kind of coaching to the mat — anatomy, physiology, range of motion. You don't just learn a move. You learn why it works.</p>
         <ul class="credentials">
-          <li><span class="k">Rank</span><span class="v">Black Belt — AOJ / Danny Stolfi</span></li>
+          <li><span class="k">Rank</span><span class="v">Black Belt — AOJ / Prof. Danny Stolfi</span></li>
           <li><span class="k">Education</span><span class="v">Master's Degree, Science</span></li>
           <li><span class="k">Style</span><span class="v">Gi &amp; No-Gi · Beginner-friendly, competitor-ready</span></li>
           <li><span class="k">Co-Owner</span><span class="v">Coach Flavia Gonzales</span></li>
         </ul>
-        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
-          <a class="btn btn-primary" data-cta="lead-modal" href="#">Train With Randy <span class="arrow">→</span></a>
-          <a class="btn btn-ghost" href="about.html">Full Bio</a>
+        <blockquote class="pull-quote">You're not just students. You are family.</blockquote>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-cta="lead-modal" href="#">Train With Randy <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn-link" href="about.html">Full Bio <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- UNIFORM POLICY -->
+<!-- ============================================================
+     05 · SCHEDULE PREVIEW — fight-card strip
+     ============================================================ -->
 <section class="section section-tight">
-  <div class="container">
-    <div class="section-head" data-gsap="fade-up">
-      <span class="eyebrow">Uniform Policy</span>
-      <h2>Clean kimono. <span class="accent">Clean mat.</span></h2>
-      <p>Simple rules that keep the academy uniform, safe, and respectful for everyone on the mat.</p>
+  <div class="container container--wide">
+    <div class="sec-head sec-head--row" data-reveal>
+      <div>
+        <span class="eyebrow"><span class="idx">05 / 11</span>&nbsp;·&nbsp;Weekly Schedule</span>
+        <h2>Every day.<br>On time.</h2>
+      </div>
+      <a class="btn btn-ghost" href="class-schedule.html">Full Schedule <span class="arrow" aria-hidden="true">→</span></a>
     </div>
 
-    <div class="info-block" data-gsap="fade-up">
-      <h3>Gi &amp; No-Gi Dress Code</h3>
-      <ul>
-        <li><strong>Gi:</strong> Black or white Gi only during basics, fundamentals, and advanced classes. Any color welcome at Open Mat.</li>
-        <li><strong>No-Gi:</strong> Black shorts and rash guard. Spats or compression pants strongly recommended to reduce skin irritation and infection risk. Males: wear shorts over leg compressions.</li>
-        <li><strong>Brand:</strong> You don't have to buy our brand — just keep uniforms free of other academy logos.</li>
-        <li><strong>Hygiene:</strong> Wash uniforms before and after every training session, especially if you're training twice a day.</li>
-        <li><strong>Rash guard:</strong> Always worn under the Gi kimono.</li>
+    <div class="sched-strip" data-reveal>
+      <div class="sched-strip__day">
+        <div class="sched-strip__letter">Mon</div>
+        <div class="sched-strip__count">06 · Classes</div>
+        <div class="sched-strip__list">
+          <span><strong>10:00 AM</strong> Homeschool Gi</span>
+          <span><strong>12:00 PM</strong> Adults Gi</span>
+          <span><strong>04:15 PM</strong> Little Kids</span>
+          <span><strong>05:00 PM</strong> Big Kids</span>
+          <span><strong>06:00 PM</strong> Adults Basics</span>
+          <span><strong>07:00 PM</strong> Advanced</span>
+        </div>
+      </div>
+      <div class="sched-strip__day">
+        <div class="sched-strip__letter">Tue</div>
+        <div class="sched-strip__count">01 · Class</div>
+        <div class="sched-strip__list">
+          <span><strong>08:00 PM</strong> Adults No-Gi</span>
+        </div>
+      </div>
+      <div class="sched-strip__day">
+        <div class="sched-strip__letter">Wed</div>
+        <div class="sched-strip__count">03 · Classes</div>
+        <div class="sched-strip__list">
+          <span><strong>10:00 AM</strong> Homeschool No-Gi</span>
+          <span><strong>12:00 PM</strong> Adults No-Gi</span>
+          <span><strong>08:00 PM</strong> Adults No-Gi</span>
+        </div>
+      </div>
+      <div class="sched-strip__day">
+        <div class="sched-strip__letter">Thu</div>
+        <div class="sched-strip__count">01 · Class</div>
+        <div class="sched-strip__list">
+          <span><strong>08:00 PM</strong> Adults No-Gi</span>
+        </div>
+      </div>
+      <div class="sched-strip__day">
+        <div class="sched-strip__letter">Fri</div>
+        <div class="sched-strip__count">06 · Classes</div>
+        <div class="sched-strip__list">
+          <span><strong>10:00 AM</strong> Homeschool Gi</span>
+          <span><strong>12:00 PM</strong> Adults Gi</span>
+          <span><strong>04:15 PM</strong> Little Kids</span>
+          <span><strong>05:00 PM</strong> Big Kids</span>
+          <span><strong>06:00 PM</strong> Adults Basics</span>
+          <span><strong>07:00 PM</strong> Advanced</span>
+        </div>
+      </div>
+      <div class="sched-strip__day">
+        <div class="sched-strip__letter">Sat</div>
+        <div class="sched-strip__count">02 · Classes</div>
+        <div class="sched-strip__list">
+          <span><strong>09:00 AM</strong> All Kids Gi</span>
+          <span><strong>03:00 PM</strong> Open Mat</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     06 · UNIFORM POLICY — editorial rules
+     ============================================================ -->
+<section class="section">
+  <div class="container">
+    <div class="rules" data-reveal>
+      <div class="rules__head">
+        <span class="eyebrow"><span class="idx">06 / 11</span>&nbsp;·&nbsp;Uniform Policy</span>
+        <h2>Clean kimono.<br>Clean mat.</h2>
+        <p>Simple rules that keep the academy uniform, safe, and respectful for everyone rolling.</p>
+      </div>
+      <ul class="rules__list">
+        <li><span class="k">Gi</span><span class="v">Black or white only during basics, fundamentals, and advanced classes.</span></li>
+        <li><span class="k">No-Gi</span><span class="v">Black shorts + rash guard. Spats or compression pants strongly recommended.</span></li>
+        <li><span class="k">Brand</span><span class="v">You don't have to buy our brand. Just keep the kimono free of other academy logos.</span></li>
+        <li><span class="k">Hygiene</span><span class="v">Wash before and after every session — especially if you train twice a day.</span></li>
+        <li><span class="k">Rash Guard</span><span class="v">Always worn under the Gi kimono. Always.</span></li>
+        <li><span class="k">Open Mat</span><span class="v">Any color Gi or No-Gi welcome. Saturday 3:00 PM.</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- LOCATION -->
+<!-- ============================================================
+     07 · LOCATION — dark map + data list
+     ============================================================ -->
 <section class="section section-tight">
   <div class="container">
-    <div class="section-head" data-gsap="fade-up">
-      <span class="eyebrow">Our Location</span>
-      <h2>Find us in <span class="accent">Summerville.</span></h2>
-      <p>Conveniently located inside Charleston Family Fitness. Plenty of parking, easy access off N. Creek Dr.</p>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="idx">07 / 11</span>&nbsp;·&nbsp;Academy Location</span>
+      <h2>Find us in Summerville.</h2>
+      <p>Inside Charleston Family Fitness. Plenty of parking, easy access off N. Creek Dr.</p>
     </div>
 
-    <div class="location" data-gsap="fade-up">
-      <div class="location-info">
-        <div class="line"><span class="k">Address</span><span class="v">117 N. Creek Dr. Unit B<br>Summerville, SC 29486</span></div>
-        <div class="line"><span class="k">Phone</span><span class="v"><a href="tel:8435853465">843-585-3465</a></span></div>
-        <div class="line"><span class="k">Email</span><span class="v"><a href="mailto:Flavia@believejiujitsu.com">Flavia@believejiujitsu.com</a></span></div>
-        <div class="line"><span class="k">Inside</span><span class="v">Charleston Family Fitness</span></div>
-        <div style="margin-top:auto;padding-top:var(--space-md);display:flex;gap:0.7rem;flex-wrap:wrap;">
-          <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow">→</span></a>
-          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=117+N+Creek+Dr+Unit+B+Summerville+SC+29486" target="_blank" rel="noopener">Get Directions</a>
+    <div class="location" data-reveal>
+      <div class="location__info">
+        <h3>117 N. Creek Dr.<br>Unit B.</h3>
+        <ul class="location__list">
+          <li class="line"><span class="k">City</span><span class="v">Summerville, SC 29486</span></li>
+          <li class="line"><span class="k">Phone</span><span class="v"><a href="tel:8435853465">843-585-3465</a></span></li>
+          <li class="line"><span class="k">Email</span><span class="v"><a href="mailto:Flavia@believejiujitsu.com">Flavia@believejiujitsu.com</a></span></li>
+          <li class="line"><span class="k">Inside</span><span class="v">Charleston Family Fitness</span></li>
+        </ul>
+        <div class="location__coords">32.0185°N&nbsp;·&nbsp;80.1757°W</div>
+        <div class="location__cta cta-row">
+          <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn-link" href="https://www.google.com/maps/search/?api=1&amp;query=117+N+Creek+Dr+Unit+B+Summerville+SC+29486" target="_blank" rel="noopener">Get Directions <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
-      <div class="location-map">
-        <iframe src="https://www.google.com/maps?q=117+N+Creek+Dr+Unit+B+Summerville+SC+29486&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Believe Jiu Jitsu location map"></iframe>
+      <div class="location__map">
+        <iframe src="https://www.google.com/maps?q=117+N+Creek+Dr+Unit+B+Summerville+SC+29486&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Believe Jiu Jitsu location map"></iframe>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ============================================================
+     08 · TESTIMONIALS — masonry
+     ============================================================ -->
 <section class="section">
-  <div class="container">
-    <div class="section-head" data-gsap="fade-up">
-      <span class="eyebrow">Word From The Mat</span>
-      <h2>Real people. <span class="accent">Real reviews.</span></h2>
-      <p>Straight from our students and their families.</p>
+  <div class="container container--wide">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="idx">08 / 11</span>&nbsp;·&nbsp;Word From The Mat</span>
+      <h2>Real people.<br>Real reviews.</h2>
+      <p>Straight from the students and their families who train here every week.</p>
     </div>
 
-    <div class="testimonials">
-      <figure class="testimonial-card" data-gsap="fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I've been at Believe BJJ since the doors opened, and I love this school. Professor Randy and family are the most compassionate human beings. You're not just students — you are family. I BELIEVE! 👽"</blockquote>
-        <cite><strong>Clay Morton II</strong> · Student</cite>
+    <div class="reviews" data-reveal-stagger>
+      <figure class="review review--hero">
+        <div class="review__stars star-row" aria-label="5 out of 5 stars">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="review__body">I've been at Believe since the doors opened. Professor Randy and his family are the most compassionate people you'll meet. You're not students — you are family. I Believe.</blockquote>
+        <figcaption class="review__attribution"><strong>Clay Morton II</strong><em>· Student</em></figcaption>
       </figure>
-      <figure class="testimonial-card" data-gsap="fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Incredible instructors, family friendly, beginner friendly, competitive — all the good things. The professor and his wife are the kindest, most helpful people. You won't regret it."</blockquote>
-        <cite><strong>LeighAnn Klinar</strong> · Student</cite>
+
+      <figure class="review review--md">
+        <div class="review__stars star-row">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="review__body">Incredible instructors, family friendly, beginner friendly, competitive — all the good things. The professor and his wife are the kindest people. You won't regret it.</blockquote>
+        <figcaption class="review__attribution"><strong>LeighAnn Klinar</strong><em>· Student</em></figcaption>
       </figure>
-      <figure class="testimonial-card" data-gsap="fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"I absolutely love it here. As a woman, everyone works to make you feel comfortable and included. Professor Randy is an amazing instructor and Flavia is so welcoming."</blockquote>
-        <cite><strong>Kyra-Nicole Hladczuk</strong> · Student</cite>
+
+      <figure class="review review--md">
+        <div class="review__stars star-row">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="review__body">I absolutely love it here. As a woman, everyone works to make you feel comfortable and included. Professor Randy is an amazing instructor and Flavia is so welcoming.</blockquote>
+        <figcaption class="review__attribution"><strong>Kyra-Nicole Hladczuk</strong><em>· Student</em></figcaption>
       </figure>
-      <figure class="testimonial-card" data-gsap="fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"The best there is. The instruction, care and attention given by Professor Randy, Coach Flavia and the Believe Team is impeccable. My kids are learning incredible life-long skills and having fun doing it."</blockquote>
-        <cite><strong>Jo Levy</strong> · Parent</cite>
+
+      <figure class="review review--wide">
+        <div class="review__stars star-row">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="review__body">The best there is. The instruction, care and attention given by Professor Randy, Coach Flavia and the Believe team is impeccable. My kids are learning incredible life-long skills and having fun doing it.</blockquote>
+        <figcaption class="review__attribution"><strong>Jo Levy</strong><em>· Parent</em></figcaption>
       </figure>
-      <figure class="testimonial-card" data-gsap="fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Our kiddo has been going since they opened. Professor Randy's teaching style and ability to meet each child where they are has led to him being engaged and committed to class."</blockquote>
-        <cite><strong>Brenda Barber</strong> · Parent</cite>
+
+      <figure class="review review--wide">
+        <div class="review__stars star-row">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="review__body">Our kiddo has been going since they opened. Professor Randy's teaching style and his ability to meet each child where they are has led to Noah being engaged and committed to class.</blockquote>
+        <figcaption class="review__attribution"><strong>Brenda Barber</strong><em>· Parent</em></figcaption>
       </figure>
-      <figure class="testimonial-card" data-gsap="fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Randy is an outstanding coach. Excellent techniques, truly enjoyed every practice. His passion for BJJ comes through every class. The Believe team is fantastic — everyone is incredibly welcoming."</blockquote>
-        <cite><strong>Slade Miller</strong> · Student</cite>
+
+      <figure class="review review--md">
+        <div class="review__stars star-row">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <blockquote class="review__body">Randy is an outstanding coach. Excellent techniques, truly enjoyed every practice. His passion for BJJ comes through every class. The team is fantastic — everyone is incredibly welcoming.</blockquote>
+        <figcaption class="review__attribution"><strong>Slade Miller</strong><em>· Student</em></figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<!-- CLOSING CTA -->
-<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container" style="text-align:center;" data-gsap="fade-up">
-    <span class="eyebrow" style="justify-content:center;display:inline-flex;">Ready When You Are</span>
-    <h2 style="font-size:clamp(2.25rem, 5vw, 4.75rem); line-height:0.95; margin:1rem auto 1rem; max-width:20ch;">Step on the mat. <span style="color:var(--accent);">Believe.</span></h2>
-    <p style="color:var(--text-muted); max-width:56ch; margin:0 auto 2rem;">Your first class is on us. No contract. No pressure. Just a real look at what training here feels like.</p>
-    <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Your Free Class <span class="arrow">→</span></a>
+<!-- ============================================================
+     09 · CLOSING CTA — full-viewport type + next-class ticker
+     ============================================================ -->
+<section class="closing">
+  <div class="closing__inner container" data-reveal>
+    <span class="eyebrow"><span class="idx">09 / 11</span>&nbsp;·&nbsp;Ready When You Are</span>
+    <h2>Step on the mat.<br><span class="text-accent">Believe.</span></h2>
+    <p>Your first class is on us. No contract. No pressure. Just a real look at what training here feels like.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Your Free Class <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+    <div class="next-class" id="nextClass"><span class="pulse"></span>Loading next class…</div>
   </div>
+  <!-- Schedule data for the ticker (day index 0=Sun … 6=Sat) -->
+  <script type="application/json" id="classSchedule">
+  [
+    { "day": "Sun", "classes": [] },
+    { "day": "Mon", "classes": [
+      { "h": 10, "m": 0,  "name": "Homeschool Gi" },
+      { "h": 12, "m": 0,  "name": "Adults Gi (All Levels)" },
+      { "h": 16, "m": 15, "name": "Little Kids Gi" },
+      { "h": 17, "m": 0,  "name": "Big Kids Gi" },
+      { "h": 18, "m": 0,  "name": "Adults Basics (Gi)" },
+      { "h": 19, "m": 0,  "name": "Advanced (Blue Belts+)" }
+    ]},
+    { "day": "Tue", "classes": [
+      { "h": 20, "m": 0, "name": "Adults No-Gi" }
+    ]},
+    { "day": "Wed", "classes": [
+      { "h": 10, "m": 0, "name": "Homeschool No-Gi" },
+      { "h": 12, "m": 0, "name": "Adults No-Gi" },
+      { "h": 20, "m": 0, "name": "Adults No-Gi" }
+    ]},
+    { "day": "Thu", "classes": [
+      { "h": 20, "m": 0, "name": "Adults No-Gi" }
+    ]},
+    { "day": "Fri", "classes": [
+      { "h": 10, "m": 0,  "name": "Homeschool Gi" },
+      { "h": 12, "m": 0,  "name": "Adults Gi (All Levels)" },
+      { "h": 16, "m": 15, "name": "Little Kids Gi" },
+      { "h": 17, "m": 0,  "name": "Big Kids Gi" },
+      { "h": 18, "m": 0,  "name": "Adults Basics (Gi)" },
+      { "h": 19, "m": 0,  "name": "Advanced (Blue Belts+)" }
+    ]},
+    { "day": "Sat", "classes": [
+      { "h": 9,  "m": 0, "name": "All Kids Gi" },
+      { "h": 15, "m": 0, "name": "Open Mat" }
+    ]}
+  ]
+  </script>
 </section>
 
-<!-- FOOTER -->
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
         <a class="nav-brand" href="index.html">
-          <span class="mark"></span>
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
           <span>Believe</span>
-          <span class="brand-alien">👽</span>
-          <span>BJJ</span>
+          <span class="sep">BJJ</span>
         </a>
         <p>Summerville's #1 Brazilian Jiu-Jitsu academy. Kids, teens, adults. Gi and No-Gi. Training led by Professor Randy Gonzales — AOJ Black Belt under Danny Stolfi.</p>
       </div>
@@ -425,24 +701,26 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-signoff">© <span data-year></span> Believe Brazilian Jiu Jitsu · I Believe <span class="alien">👽</span></div>
+      <div class="footer-signoff">© <span data-year></span> <span class="sep">·</span> <strong>Believe Brazilian Jiu Jitsu</strong> <span class="sep">·</span> I Believe.</div>
       <p class="powered-by">Powered by <a href="https://www.mmamarketingpro.com" target="_blank" rel="noopener">MMA Marketing Pro</a></p>
     </div>
-    <nav aria-label="Legal" style="margin-top:var(--space-md);display:flex;gap:1.5rem;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-faint);">
+    <nav aria-label="Legal" class="footer-legal">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
     </nav>
   </div>
 </footer>
 
-<!-- LEAD MODAL -->
+<!-- ============================================================
+     LEAD MODAL
+     ============================================================ -->
 <div class="lead-modal" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle" aria-hidden="true">
   <div class="lead-modal__backdrop"></div>
   <div class="lead-modal__card">
     <div class="lead-modal__header">
-      <span class="step-of">Step 1 of 2</span>
+      <span class="step-of">Step 01 / 02 · Your Info</span>
       <h3 id="leadModalTitle">Claim Your Free Trial Class</h3>
-      <p>Drop your info. Next, pick a time on the class calendar.</p>
+      <p>Drop your info. Next screen, pick a time on the class calendar.</p>
       <button type="button" class="lead-modal__close" data-modal-close aria-label="Close"><i data-lucide="x"></i></button>
     </div>
     <form id="leadForm" class="lead-modal__body" novalidate>
@@ -478,8 +756,8 @@
           <option value="open-mat">Open Mat</option>
         </select>
       </div>
-      <button type="submit" class="lead-modal__submit">Continue To Booking <span class="arrow">→</span></button>
-      <div class="lead-modal__foot">Step 1 of 2 · Your info stays with us</div>
+      <button type="submit" class="lead-modal__submit">Continue To Booking <span class="arrow" aria-hidden="true">→</span></button>
+      <div class="lead-modal__foot">Step 01 / 02 · Your info stays with us</div>
     </form>
   </div>
 </div>

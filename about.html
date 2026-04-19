@@ -8,11 +8,11 @@
   <meta name="theme-color" content="#0A0A0A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <link rel="canonical" href="https://believejiujitsu.com/about.html">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='11' y='11' width='10' height='10' fill='%2337CA37'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='7' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='12' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='17' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='22' y='9' width='3' height='14' fill='%2337CA37'/></svg>">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://believejiujitsu.com/about.html">
@@ -58,12 +58,10 @@
 
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
-    <a href="index.html" class="nav-brand">
-      <img src="images/logo/logo.png" alt="" onerror="this.style.display='none'">
-      <span class="mark"></span>
+    <a href="index.html" class="nav-brand" aria-label="Believe Jiu Jitsu — home">
+      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
       <span>Believe</span>
-      <span class="brand-alien">👽</span>
-      <span>BJJ</span>
+      <span class="sep">BJJ</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -71,7 +69,7 @@
       <li><a href="class-schedule.html">Schedule</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <a class="nav-cta" data-cta="lead-modal" href="#">Free Trial <span class="arrow">→</span></a>
+    <a class="nav-cta" data-cta="lead-modal" href="#">Free Trial <span class="arrow" aria-hidden="true">→</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i data-lucide="menu"></i></button>
   </div>
   <div class="nav-mobile">
@@ -79,7 +77,7 @@
     <a href="about.html" class="active">About</a>
     <a href="class-schedule.html">Schedule</a>
     <a href="contact.html">Contact</a>
-    <a class="nav-cta" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow">→</span></a>
+    <a class="nav-cta" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
     <div class="mobile-meta">
       117 N. Creek Dr. Unit B<br>Summerville, SC 29486<br>
       <a href="tel:8435853465">843-585-3465</a>
@@ -88,31 +86,36 @@
 </nav>
 
 <!-- PAGE HEADER -->
-<header class="page-header">
+<header class="page-header" data-wm="About">
   <div class="container">
-    <div class="page-header-crumb"><a href="index.html">Home</a> <span>/</span> <span>About</span></div>
-    <h1>Learn from the <span class="accent">best coaches</span> in Summerville.</h1>
-    <p class="page-header-lead">Believe Jiu Jitsu is a family-owned academy built on AOJ lineage, anatomical precision, and the belief that everyone — from a 5-year-old to a competitor — has a place on the mat.</p>
-    <div class="page-header-ctas">
-      <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow">→</span></a>
-      <a class="btn btn-ghost" href="class-schedule.html">View Schedule</a>
+    <div class="page-crumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>About</span></div>
+    <span class="eyebrow"><span class="idx">01 / 04</span>&nbsp;·&nbsp;About the academy</span>
+    <h1 style="margin-top:1rem;">Learn from the best<br>coaches in Summerville.</h1>
+    <p class="page-header__lead">Believe Jiu Jitsu is a family-owned academy built on AOJ lineage, anatomical precision, and the belief that everyone — from a five-year-old to a competitor — has a place on the mat.</p>
+    <div class="page-header__ctas">
+      <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
+      <a class="btn-link" href="class-schedule.html">View Schedule <span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </div>
 </header>
 
-<!-- INSTRUCTOR SPOTLIGHT -->
+<!-- INSTRUCTOR MAGAZINE FEATURE -->
 <section class="section">
   <div class="container">
-    <div class="instructor" data-gsap="fade-up">
-      <div class="instructor-photo">
-        <img src="https://picsum.photos/seed/believe-bjj-randy/900/1200" data-local="images/team/randy-gonzales.jpg" alt="Professor Randy Gonzales — Head Instructor and Co-Owner, Believe Jiu Jitsu" width="900" height="1200" loading="eager" fetchpriority="high" decoding="async">
-        <div class="accent-flag">Head Instructor · Co-Owner</div>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="idx">02 / 04</span>&nbsp;·&nbsp;Head Instructor</span>
+      <h2>Professor Randy Gonzales.</h2>
+    </div>
+    <div class="instructor" data-reveal>
+      <div class="instructor__visual">
+        <img src="https://picsum.photos/seed/believe-bjj-randy/1100/1400" data-local="images/team/randy-gonzales.jpg" alt="Professor Randy Gonzales — Head Instructor and Co-Owner, Believe Jiu Jitsu" width="1100" height="1400" loading="eager" fetchpriority="high" decoding="async" data-parallax>
+        <span class="instructor__flag"><em>Head Instructor</em>&nbsp;·&nbsp;Co-Owner</span>
+        <span class="instructor__caption">Photo · Academy Mat, Summerville SC</span>
       </div>
-      <div class="instructor-info">
-        <span class="eyebrow">Meet the Professor</span>
-        <h2>Professor Randy <span class="accent">Gonzales</span></h2>
-        <span class="role">Head Instructor · Co-Owner</span>
-        <p>Professor Randy Gonzales is the head instructor and co-owner of Believe Jiu Jitsu, known for his dynamic teaching style and deep passion for the art. He earned his Black Belt under Professor Danny Stolfi and the world-renowned AOJ team, building on a foundation of excellence with his previous belts awarded by a 6th Degree Black Belt and World Champion.</p>
+      <div class="instructor__body">
+        <h2 class="instructor__name"><span>Randy</span><span>Gonzales.</span></h2>
+        <span class="instructor__role">Black Belt · AOJ / Prof. Danny Stolfi</span>
+        <p>Professor Randy Gonzales is the head instructor and co-owner of Believe Jiu Jitsu — known for his dynamic teaching style and deep passion for the art. He earned his Black Belt under Professor Danny Stolfi and the world-renowned AOJ team, building on a foundation of excellence with his previous belts awarded by a 6th Degree Black Belt and World Champion.</p>
         <p>Holding a Master's Degree in Science, Professor Randy brings a unique blend of academic knowledge and practical application to his instruction. His expertise in anatomy, physiology, and range of motion shapes every position he teaches — you don't just learn a move, you learn why it works.</p>
         <ul class="credentials">
           <li><span class="k">Rank</span><span class="v">Black Belt — AOJ / Prof. Danny Stolfi</span></li>
@@ -120,9 +123,12 @@
           <li><span class="k">Education</span><span class="v">Master's Degree, Science</span></li>
           <li><span class="k">Specialty</span><span class="v">Anatomy · Physiology · Range of Motion</span></li>
           <li><span class="k">Style</span><span class="v">Gi &amp; No-Gi · Beginner-friendly, competitor-ready</span></li>
+          <li><span class="k">Co-Owner</span><span class="v">Coach Flavia Gonzales</span></li>
         </ul>
-        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
-          <a class="btn btn-primary" data-cta="lead-modal" href="#">Train With Randy <span class="arrow">→</span></a>
+        <blockquote class="pull-quote">Every position has a reason. If you know the reason, you own the position.</blockquote>
+        <div class="cta-row">
+          <a class="btn btn-primary" data-cta="lead-modal" href="#">Train With Randy <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn-link" href="class-schedule.html">See Schedule <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
@@ -130,35 +136,51 @@
 </section>
 
 <!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span>Family Oriented &middot; Beginner Friendly &middot; Competition Ready &middot; <span class="ufo">👽</span> &middot; Family Oriented &middot; Beginner Friendly &middot; Competition Ready</span>
-    <span>Family Oriented &middot; Beginner Friendly &middot; Competition Ready &middot; <span class="ufo">👽</span> &middot; Family Oriented &middot; Beginner Friendly &middot; Competition Ready</span>
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-row marquee-row--outline marquee-row--l">
+    <span>Family Oriented<i class="marquee-dot"></i>Beginner Friendly<i class="marquee-dot"></i>Competition Ready<i class="marquee-dot"></i></span>
+    <span>Family Oriented<i class="marquee-dot"></i>Beginner Friendly<i class="marquee-dot"></i>Competition Ready<i class="marquee-dot"></i></span>
+    <span>Family Oriented<i class="marquee-dot"></i>Beginner Friendly<i class="marquee-dot"></i>Competition Ready<i class="marquee-dot"></i></span>
   </div>
 </div>
 
-<!-- PHILOSOPHY / SPLIT -->
+<!-- PHILOSOPHY -->
 <section class="section">
   <div class="container">
-    <div class="section-head" data-gsap="fade-up">
-      <span class="eyebrow">Our Philosophy</span>
-      <h2>A welcoming mat. <span class="accent">A sharp edge.</span></h2>
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow"><span class="idx">03 / 04</span>&nbsp;·&nbsp;Our Philosophy</span>
+      <h2>A welcoming mat.<br>A sharp edge.</h2>
     </div>
-    <div class="split" data-gsap="fade-up">
-      <div class="split-visual">
-        <img src="https://picsum.photos/seed/believe-bjj-about/900/1200" data-local="images/gallery/academy-mat.jpg" alt="The Believe Jiu Jitsu academy mat in Summerville, SC" width="900" height="1200" loading="lazy" decoding="async">
+
+    <div class="philosophy" data-reveal>
+      <div class="philosophy__head">
+        <h2>Casual or competitor —<br>both belong here.</h2>
       </div>
-      <div class="split-body">
-        <h2>Casual practitioner or dedicated competitor — both belong here.</h2>
-        <p>Believe Jiu Jitsu offers a welcoming, family-oriented environment with something for every kind of student. Whether you're a parent getting back in shape, a teenager looking for confidence, or a competitor preparing for the next IBJJF tournament — the training meets you where you are.</p>
+      <div class="philosophy__body">
+        <p><strong>Believe Jiu Jitsu</strong> offers a welcoming, family-oriented environment with something for every kind of student. Whether you're a parent getting back in shape, a teenager looking for confidence, or a competitor preparing for the next IBJJF tournament — the training meets you where you are.</p>
         <p>Conveniently located inside Charleston Family Fitness in Summerville, the academy runs a full week of Gi and No-Gi classes across adults, teens, and two distinct kids programs. Every class is 60 minutes — focused, structured, and taught by people who know what they're doing.</p>
-        <ul class="split-bullets">
+        <ul class="philosophy__list">
           <li>Real AOJ-lineage instruction from a credentialed Black Belt</li>
           <li>Separate programs for Little Kids (5-7) and Big Kids (8-13)</li>
-          <li>Homeschool classes daytime, adult classes morning &amp; evening</li>
+          <li>Homeschool classes daytime · adult classes morning &amp; evening</li>
           <li>Saturday Open Mat — any color Gi or No-Gi welcome</li>
           <li>No contracts. Just training, taught well.</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="facility-rail" data-reveal-stagger>
+      <div class="facility-tile">
+        <img src="https://picsum.photos/seed/believe-bjj-mat/900/1200" data-local="images/gallery/academy-mat.jpg" alt="The Believe Jiu Jitsu training mat in Summerville, SC" width="900" height="1200" loading="lazy" decoding="async">
+        <span class="facility-tile__label">01 · The Mat</span>
+      </div>
+      <div class="facility-tile">
+        <img src="https://picsum.photos/seed/believe-bjj-facility/900/1200" data-local="images/gallery/kids-class.jpg" alt="Kids jiu-jitsu class in session" width="900" height="1200" loading="lazy" decoding="async">
+        <span class="facility-tile__label">02 · Kids Class</span>
+      </div>
+      <div class="facility-tile">
+        <img src="https://picsum.photos/seed/believe-bjj-team/900/1200" data-local="images/gallery/team.jpg" alt="The Believe Jiu Jitsu training family" width="900" height="1200" loading="lazy" decoding="async">
+        <span class="facility-tile__label">03 · The Team</span>
       </div>
     </div>
   </div>
@@ -167,32 +189,34 @@
 <!-- UNIFORM POLICY -->
 <section class="section section-tight">
   <div class="container">
-    <div class="section-head" data-gsap="fade-up">
-      <span class="eyebrow">Uniform Policy</span>
-      <h2>Clean kimono. <span class="accent">Clean mat.</span></h2>
-    </div>
-    <div class="info-block" data-gsap="fade-up">
-      <h3>Gi &amp; No-Gi Dress Code</h3>
-      <ul>
-        <li><strong>Gi:</strong> Black or white Gi only during basics, fundamentals, and advanced classes.</li>
-        <li><strong>Open Mat exception:</strong> Any color Gi or No-Gi is acceptable.</li>
-        <li><strong>No-Gi:</strong> Black shorts and rash guard. Spats or compression pants strongly recommended.</li>
-        <li><strong>Males:</strong> Shorts must be worn over leg compressions — no exceptions.</li>
-        <li><strong>Rash guard:</strong> Always worn under the Gi kimono.</li>
-        <li><strong>Brand:</strong> You don't have to buy our brand — just keep uniforms free of other academy logos.</li>
-        <li><strong>Hygiene:</strong> Wash uniforms before and after every session, especially if training twice a day.</li>
+    <div class="rules" data-reveal>
+      <div class="rules__head">
+        <span class="eyebrow"><span class="idx">04 / 04</span>&nbsp;·&nbsp;Uniform Policy</span>
+        <h2>Clean kimono.<br>Clean mat.</h2>
+        <p>Simple rules that keep the academy uniform, safe, and respectful for everyone rolling.</p>
+      </div>
+      <ul class="rules__list">
+        <li><span class="k">Gi</span><span class="v">Black or white only during basics, fundamentals, and advanced classes.</span></li>
+        <li><span class="k">Open Mat</span><span class="v">Any color Gi or No-Gi welcome.</span></li>
+        <li><span class="k">No-Gi</span><span class="v">Black shorts + rash guard. Spats or compression pants strongly recommended.</span></li>
+        <li><span class="k">Males</span><span class="v">Shorts must be worn over leg compressions — no exceptions.</span></li>
+        <li><span class="k">Rash Guard</span><span class="v">Always worn under the Gi kimono.</span></li>
+        <li><span class="k">Brand</span><span class="v">You don't have to buy our brand — just keep uniforms free of other academy logos.</span></li>
+        <li><span class="k">Hygiene</span><span class="v">Wash before and after every session, especially if you're training twice a day.</span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- CLOSING CTA -->
-<section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-  <div class="container" style="text-align:center;" data-gsap="fade-up">
-    <span class="eyebrow" style="justify-content:center;display:inline-flex;">Ready To Roll?</span>
-    <h2 style="font-size:clamp(2.25rem, 5vw, 4.75rem); line-height:0.95; margin:1rem auto 1rem; max-width:20ch;">Come meet us. <span style="color:var(--accent);">On the mat.</span></h2>
-    <p style="color:var(--text-muted); max-width:56ch; margin:0 auto 2rem;">Your first class is free. Show up, grip up, and see why our students keep showing back up.</p>
-    <a class="btn btn-primary" data-cta="lead-modal" href="#">Book Your Free Class <span class="arrow">→</span></a>
+<!-- CLOSING -->
+<section class="closing">
+  <div class="closing__inner container" data-reveal>
+    <span class="eyebrow">Ready to roll?</span>
+    <h2>Come meet us.<br><span class="text-accent">On the mat.</span></h2>
+    <p>Your first class is free. Show up, grip up, and see why students keep coming back.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Your Free Class <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
   </div>
 </section>
 
@@ -202,10 +226,9 @@
     <div class="footer-top">
       <div class="footer-brand">
         <a class="nav-brand" href="index.html">
-          <span class="mark"></span>
+          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
           <span>Believe</span>
-          <span class="brand-alien">👽</span>
-          <span>BJJ</span>
+          <span class="sep">BJJ</span>
         </a>
         <p>Summerville's #1 Brazilian Jiu-Jitsu academy. Kids, teens, adults. Gi and No-Gi. Training led by Professor Randy Gonzales — AOJ Black Belt under Danny Stolfi.</p>
       </div>
@@ -239,10 +262,10 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-signoff">© <span data-year></span> Believe Brazilian Jiu Jitsu · I Believe <span class="alien">👽</span></div>
+      <div class="footer-signoff">© <span data-year></span> <span class="sep">·</span> <strong>Believe Brazilian Jiu Jitsu</strong> <span class="sep">·</span> I Believe.</div>
       <p class="powered-by">Powered by <a href="https://www.mmamarketingpro.com" target="_blank" rel="noopener">MMA Marketing Pro</a></p>
     </div>
-    <nav aria-label="Legal" style="margin-top:var(--space-md);display:flex;gap:1.5rem;font-family:var(--ff-mono);font-size:0.7rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-faint);">
+    <nav aria-label="Legal" class="footer-legal">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
     </nav>
@@ -254,9 +277,9 @@
   <div class="lead-modal__backdrop"></div>
   <div class="lead-modal__card">
     <div class="lead-modal__header">
-      <span class="step-of">Step 1 of 2</span>
+      <span class="step-of">Step 01 / 02 · Your Info</span>
       <h3 id="leadModalTitle">Claim Your Free Trial Class</h3>
-      <p>Drop your info. Next, pick a time on the class calendar.</p>
+      <p>Drop your info. Next screen, pick a time on the class calendar.</p>
       <button type="button" class="lead-modal__close" data-modal-close aria-label="Close"><i data-lucide="x"></i></button>
     </div>
     <form id="leadForm" class="lead-modal__body" novalidate>
@@ -292,8 +315,8 @@
           <option value="open-mat">Open Mat</option>
         </select>
       </div>
-      <button type="submit" class="lead-modal__submit">Continue To Booking <span class="arrow">→</span></button>
-      <div class="lead-modal__foot">Step 1 of 2 · Your info stays with us</div>
+      <button type="submit" class="lead-modal__submit">Continue To Booking <span class="arrow" aria-hidden="true">→</span></button>
+      <div class="lead-modal__foot">Step 01 / 02 · Your info stays with us</div>
     </form>
   </div>
 </div>
