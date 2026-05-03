@@ -8,23 +8,23 @@
   <meta name="theme-color" content="#0A0A0A">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <link rel="canonical" href="https://believejiujitsu.com/about.html">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='7' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='12' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='17' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='22' y='9' width='3' height='14' fill='%2337CA37'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='7' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='12' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='17' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='22' y='9' width='3' height='14' fill='%2300D85C'/></svg>">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://believejiujitsu.com/about.html">
   <meta property="og:site_name" content="Believe Jiu Jitsu">
   <meta property="og:title" content="About — Believe Jiu Jitsu · Summerville, SC">
   <meta property="og:description" content="Learn about Believe Jiu Jitsu in Summerville, SC — led by Professor Randy Gonzales, AOJ Black Belt under Professor Danny Stolfi, and Coach Flavia Gonzales.">
-  <meta property="og:image" content="https://picsum.photos/seed/believe-bjj-og/1200/630">
+  <meta property="og:image" content="https://believejiujitsu.com/images/og-image.jpg">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About — Believe Jiu Jitsu">
   <meta name="twitter:description" content="Led by Professor Randy Gonzales, AOJ Black Belt. Family-oriented BJJ academy in Summerville, SC.">
-  <meta name="twitter:image" content="https://picsum.photos/seed/believe-bjj-og/1200/630">
+  <meta name="twitter:image" content="https://believejiujitsu.com/images/og-image.jpg">
 
   <script type="application/ld+json">
   {
@@ -54,14 +54,18 @@
   }
   </script>
 </head>
-<body>
+<body class="is-loading">
+
+<div class="page-loader" aria-hidden="true">
+  <img src="images/logo/believe-circle.svg" alt="" class="page-loader__mark page-loader__mark--circle" width="940" height="940">
+</div>
+
+<div class="cursor-dot" aria-hidden="true"></div>
 
 <nav class="nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand" aria-label="Believe Jiu Jitsu — home">
-      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-      <span>Believe</span>
-      <span class="sep">BJJ</span>
+      <img src="images/logo/believe-horizontal.png" alt="Believe Brazilian Jiu Jitsu" class="nav-brand__lockup" width="2172" height="724">
     </a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
@@ -69,6 +73,7 @@
       <li><a href="class-schedule.html">Schedule</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <a class="nav-phone" href="tel:8435853465" aria-label="Call us"><strong>843</strong>·585·3465</a>
     <a class="nav-cta" data-cta="lead-modal" href="#">Free Trial <span class="arrow" aria-hidden="true">→</span></a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><i data-lucide="menu"></i></button>
   </div>
@@ -86,7 +91,8 @@
 </nav>
 
 <!-- PAGE HEADER -->
-<header class="page-header" data-wm="About">
+<header class="page-header" data-wm="About" data-bg>
+    <img src="images/gallery/about-header.webp" alt="" class="page-header__bg" width="2000" height="875" loading="eager" decoding="async">
   <div class="container">
     <div class="page-crumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>About</span></div>
     <span class="eyebrow"><span class="idx">01 / 04</span>&nbsp;·&nbsp;About the academy</span>
@@ -108,7 +114,7 @@
     </div>
     <div class="instructor" data-reveal>
       <div class="instructor__visual">
-        <img src="https://picsum.photos/seed/believe-bjj-randy/1100/1400" data-local="images/team/randy-gonzales.jpg" alt="Professor Randy Gonzales — Head Instructor and Co-Owner, Believe Jiu Jitsu" width="1100" height="1400" loading="eager" fetchpriority="high" decoding="async" data-parallax>
+        <img src="images/team/randy-gonzales-4x5.webp" alt="Professor Randy Gonzales — Head Instructor and Co-Owner, Believe Jiu Jitsu" width="1100" height="1375" loading="eager" fetchpriority="high" decoding="async" data-parallax>
         <span class="instructor__flag"><em>Head Instructor</em>&nbsp;·&nbsp;Co-Owner</span>
         <span class="instructor__caption">Photo · Academy Mat, Summerville SC</span>
       </div>
@@ -171,16 +177,16 @@
 
     <div class="facility-rail" data-reveal-stagger>
       <div class="facility-tile">
-        <img src="https://picsum.photos/seed/believe-bjj-mat/900/1200" data-local="images/gallery/academy-mat.jpg" alt="The Believe Jiu Jitsu training mat in Summerville, SC" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="facility-tile__label">01 · The Mat</span>
+        <img src="images/gallery/about-tile-1.webp" alt="Adult Gi sparring in the Believe Jiu Jitsu academy" width="900" height="1125" loading="lazy" decoding="async">
+        <span class="facility-tile__label">01 · Adult Gi</span>
       </div>
       <div class="facility-tile">
-        <img src="https://picsum.photos/seed/believe-bjj-facility/900/1200" data-local="images/gallery/kids-class.jpg" alt="Kids jiu-jitsu class in session" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="facility-tile__label">02 · Kids Class</span>
+        <img src="images/gallery/about-tile-2.webp" alt="Big Kids drilling armbars in class" width="900" height="1125" loading="lazy" decoding="async">
+        <span class="facility-tile__label">02 · Big Kids</span>
       </div>
       <div class="facility-tile">
-        <img src="https://picsum.photos/seed/believe-bjj-team/900/1200" data-local="images/gallery/team.jpg" alt="The Believe Jiu Jitsu training family" width="900" height="1200" loading="lazy" decoding="async">
-        <span class="facility-tile__label">03 · The Team</span>
+        <img src="images/gallery/about-tile-3.webp" alt="Women No-Gi sparring at Believe Jiu Jitsu" width="900" height="1126" loading="lazy" decoding="async">
+        <span class="facility-tile__label">03 · No-Gi Women</span>
       </div>
     </div>
   </div>
@@ -225,10 +231,8 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="nav-brand" href="index.html">
-          <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-          <span>Believe</span>
-          <span class="sep">BJJ</span>
+        <a class="footer-brand__lockup" href="index.html" aria-label="Believe Jiu Jitsu — home">
+          <img src="images/logo/believe-horizontal.png" alt="Believe Brazilian Jiu Jitsu" width="2172" height="724">
         </a>
         <p>Summerville's #1 Brazilian Jiu-Jitsu academy. Kids, teens, adults. Gi and No-Gi. Training led by Professor Randy Gonzales — AOJ Black Belt under Danny Stolfi.</p>
       </div>
@@ -319,6 +323,11 @@
       <div class="lead-modal__foot">Step 01 / 02 · Your info stays with us</div>
     </form>
   </div>
+</div>
+
+<div class="mobile-cta-bar" id="mobileCtaBar" aria-hidden="true">
+  <a class="" href="tel:8435853465">Call</a>
+  <a class="primary" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>

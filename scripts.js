@@ -46,11 +46,41 @@
     });
   }
 
+  /* ---- Page loader curtain ---- */
+  (function () {
+    var body = document.body;
+    if (!body.classList.contains('is-loading')) return;
+    function done() {
+      setTimeout(function () {
+        body.classList.add('loaded');
+        body.classList.remove('is-loading');
+      }, 380);
+    }
+    if (document.readyState === 'complete') done();
+    else window.addEventListener('load', done);
+    // Safety net — never let the loader stick
+    setTimeout(function () {
+      body.classList.add('loaded');
+      body.classList.remove('is-loading');
+    }, 2200);
+  })();
+
   /* ---- Hero entrance (mask-rise class-flip) ---- */
   var hero = document.querySelector('.hero');
   if (hero) {
-    requestAnimationFrame(function () {
-      setTimeout(function () { hero.classList.add('is-ready'); }, 60);
+    setTimeout(function () { hero.classList.add('is-ready'); }, 80);
+    // Belt-and-braces: ensure is-ready fires even if requestAnimationFrame is throttled
+    setTimeout(function () { if (!hero.classList.contains('is-ready')) hero.classList.add('is-ready'); }, 1500);
+  }
+
+  /* ---- Hero portrait spotlight (cursor-driven) ---- */
+  if (!IS_TOUCH) {
+    document.querySelectorAll('[data-spotlight]').forEach(function (el) {
+      el.addEventListener('mousemove', function (ev) {
+        var r = el.getBoundingClientRect();
+        el.style.setProperty('--mx', ((ev.clientX - r.left) / r.width * 100) + '%');
+        el.style.setProperty('--my', ((ev.clientY - r.top) / r.height * 100) + '%');
+      });
     });
   }
 
@@ -130,6 +160,48 @@
           scrollTrigger: { trigger: el.closest('section') || el, start: 'top bottom', end: 'bottom top', scrub: true }
         });
       });
+
+      // Hero "BELIEVE" watermark slow drift
+      var heroEl = document.querySelector('.hero');
+      if (heroEl) {
+        gsap.to(heroEl, {
+          '--wm-shift': '-22%',
+          ease: 'none',
+          scrollTrigger: { trigger: heroEl, start: 'top top', end: 'bottom top', scrub: 0.6 }
+        });
+        // Apply via CSS custom property → translate the ::before
+        var style = document.createElement('style');
+        style.textContent = '.hero::before { transform: translateX(var(--wm-shift, 0)); }';
+        document.head.appendChild(style);
+      }
+
+      // Funnel left-rail progress
+      var rail = document.querySelector('.funnel-rail');
+      var stackEl = document.querySelector('.funnel-stack');
+      if (rail && stackEl && window.innerWidth > 900) {
+        gsap.to(rail, {
+          '--rail': '100%',
+          ease: 'none',
+          scrollTrigger: { trigger: stackEl, start: 'top center', end: 'bottom center', scrub: 0.6 }
+        });
+        var fill = rail.querySelector('.funnel-rail__fill');
+        if (fill) {
+          ScrollTrigger.create({
+            trigger: stackEl,
+            start: 'top center',
+            end: 'bottom center',
+            onUpdate: function (self) {
+              fill.style.height = (self.progress * 100) + '%';
+              var dots = rail.querySelectorAll('.funnel-rail__dot');
+              dots.forEach(function (d, i) {
+                var threshold = i / (dots.length - 1);
+                if (self.progress >= threshold - 0.02) d.classList.add('done');
+                else d.classList.remove('done');
+              });
+            }
+          });
+        }
+      }
 
       var rows = gsap.utils.toArray('.marquee-row');
       if (rows.length) {
@@ -330,12 +402,17 @@
         });
         if (!ok) return;
 
+        var days = [];
+        form.querySelectorAll('.lead-modal__day.active').forEach(function (d) {
+          days.push(d.getAttribute('data-day'));
+        });
         var data = {
           firstName: form.querySelector('#lead-firstName').value.trim(),
           lastName:  form.querySelector('#lead-lastName').value.trim(),
           email:     form.querySelector('#lead-email').value.trim(),
           phone:     form.querySelector('#lead-phone').value.trim(),
-          program:   form.querySelector('#lead-program').value
+          program:   form.querySelector('#lead-program').value,
+          days:      days
         };
         try { sessionStorage.setItem('leadFormData', JSON.stringify(data)); } catch (e) {}
         window.location.href = 'booking.html?program=' + encodeURIComponent(data.program);
@@ -361,6 +438,102 @@
       if (fn) setTimeout(function () { fn.focus(); }, 80);
     });
   });
+
+  /* ---- FAQ accordion ---- */
+  document.querySelectorAll('.faq__item').forEach(function (item) {
+    var btn = item.querySelector('.faq__q');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  });
+
+  /* ---- Sticky mobile CTA bar (shows after hero scroll) ---- */
+  (function () {
+    var bar = document.getElementById('mobileCtaBar');
+    if (!bar) return;
+    function check() {
+      if (window.scrollY > 320) bar.classList.add('in');
+      else bar.classList.remove('in');
+    }
+    check();
+    window.addEventListener('scroll', check, { passive: true });
+  })();
+
+  /* ---- Schedule strip — highlight TODAY ---- */
+  (function () {
+    var days = document.querySelectorAll('.sched-strip__day');
+    if (!days.length) return;
+    var today = new Date().getDay(); // 0=Sun, 1=Mon ... 6=Sat
+    var letters = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    var todayLetter = letters[today];
+    days.forEach(function (d) {
+      var letterEl = d.querySelector('.sched-strip__letter');
+      if (letterEl && letterEl.textContent.trim() === todayLetter) {
+        d.classList.add('is-today');
+      }
+    });
+  })();
+
+  /* ---- Custom cursor (desktop / fine pointer only) ---- */
+  if (!IS_TOUCH && !REDUCED) {
+    var dot = document.querySelector('.cursor-dot');
+    if (dot) {
+      var cx = 0, cy = 0, tx = 0, ty = 0, rafId = null;
+      function tick() {
+        cx += (tx - cx) * 0.22;
+        cy += (ty - cy) * 0.22;
+        dot.style.transform = 'translate3d(' + (cx - 12) + 'px,' + (cy - 12) + 'px,0)';
+        if (Math.abs(tx - cx) > 0.2 || Math.abs(ty - cy) > 0.2) rafId = requestAnimationFrame(tick);
+        else rafId = null;
+      }
+      window.addEventListener('mousemove', function (ev) {
+        tx = ev.clientX; ty = ev.clientY;
+        dot.classList.add('show');
+        if (!rafId) rafId = requestAnimationFrame(tick);
+      });
+      window.addEventListener('mouseout', function (ev) {
+        if (!ev.relatedTarget) dot.classList.remove('show');
+      });
+      // Hover state on CTAs and program cards
+      document.querySelectorAll('.btn-primary, .pgm, .nav-cta, .lead-modal__submit').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { dot.classList.add('over-cta'); });
+        el.addEventListener('mouseleave', function () { dot.classList.remove('over-cta'); });
+      });
+    }
+  }
+
+  /* ---- Class-schedule page filter chips ---- */
+  (function () {
+    var filters = document.querySelectorAll('.weigh-filter');
+    if (!filters.length) return;
+    var classes = document.querySelectorAll('.weigh-class');
+    filters.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        var f = chip.getAttribute('data-filter');
+        filters.forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        classes.forEach(function (row) {
+          if (f === 'all') { row.classList.remove('is-faded'); return; }
+          var prog = row.getAttribute('data-program') || '';
+          row.classList.toggle('is-faded', prog !== f);
+        });
+      });
+    });
+  })();
+
+  /* ---- Lead modal — preferred days chip multi-select ---- */
+  (function () {
+    var wrap = document.getElementById('leadDays');
+    if (!wrap) return;
+    wrap.querySelectorAll('.lead-modal__day').forEach(function (chip) {
+      chip.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        chip.classList.toggle('active');
+      });
+    });
+  })();
 
   /* ---- Booking Page: read program param, show calendar, switch chips ---- */
   var bookingWrap = document.getElementById('bookingCalendars');

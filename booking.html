@@ -9,21 +9,25 @@
   <meta name="robots" content="noindex,follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Geist:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
   <link rel="canonical" href="https://believejiujitsu.com/booking.html">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='7' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='12' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='17' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='22' y='9' width='3' height='14' fill='%2337CA37'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A0A0A'/><rect x='7' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='12' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='17' y='9' width='3' height='14' fill='%23F5F5F5'/><rect x='22' y='9' width='3' height='14' fill='%2300D85C'/></svg>">
 </head>
-<body>
+<body class="is-loading">
+
+<div class="page-loader" aria-hidden="true">
+  <img src="images/logo/believe-circle.svg" alt="" class="page-loader__mark page-loader__mark--circle" width="940" height="940">
+</div>
+
+<div class="cursor-dot" aria-hidden="true"></div>
 
 <!-- SIMPLIFIED NAV — logo only, reduces exit points -->
 <nav class="booking-nav" aria-label="Primary">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand" aria-label="Believe Jiu Jitsu — home">
-      <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
-      <span>Believe</span>
-      <span class="sep">BJJ</span>
+      <img src="images/logo/believe-horizontal.png" alt="Believe Brazilian Jiu Jitsu" class="nav-brand__lockup" width="2172" height="724">
     </a>
     <span class="booking-nav__help">Secure Booking · <a href="tel:8435853465">843-585-3465</a></span>
   </div>
@@ -147,6 +151,11 @@
     <p class="powered-by">Powered by <a href="https://www.mmamarketingpro.com" target="_blank" rel="noopener">MMA Marketing Pro</a></p>
   </div>
 </footer>
+
+<div class="mobile-cta-bar" id="mobileCtaBar" aria-hidden="true">
+  <a class="" href="tel:8435853465">Call</a>
+  <a class="primary" data-cta="lead-modal" href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
