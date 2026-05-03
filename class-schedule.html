@@ -99,12 +99,12 @@
 </nav>
 
 <!-- PAGE HEADER -->
-<header class="page-header" data-wm="Schedule">
+<header class="page-header page-header--compact" data-wm="Schedule">
   <div class="container">
     <div class="page-crumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Schedule</span></div>
-    <span class="eyebrow"><span class="idx">01 / 03</span>&nbsp;·&nbsp;Weekly schedule</span>
-    <h1 style="margin-top:1rem;">Flexible classes.<br>Real life.</h1>
-    <p class="page-header__lead">Train on multiple days and times without reshaping your schedule. Every 60-minute class is more than a workout — you unplug, sharpen focus, build confidence, and release stress. You'll leave clearer, calmer, and stronger than when you arrived.</p>
+    <span class="eyebrow"><span class="idx">01 / 02</span>&nbsp;·&nbsp;Weekly schedule</span>
+    <h1 style="margin-top:0.75rem;">Flexible classes.<br>Real life.</h1>
+    <p class="page-header__lead">Six days a week. 60-minute classes. Gi &amp; No-Gi. Click any class below to claim your free trial.</p>
     <div class="page-header__ctas">
       <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
       <a class="btn-link" href="contact.html">Questions? Contact Us <span class="arrow" aria-hidden="true">→</span></a>
@@ -112,26 +112,9 @@
   </div>
 </header>
 
-<!-- MARQUEE -->
-<div class="marquee-band" aria-hidden="true">
-  <div class="marquee-row marquee-row--solid marquee-row--r">
-    <span>6 Days a Week<i class="marquee-dot"></i>60-Minute Classes<i class="marquee-dot"></i>Gi + No-Gi<i class="marquee-dot"></i></span>
-    <span>6 Days a Week<i class="marquee-dot"></i>60-Minute Classes<i class="marquee-dot"></i>Gi + No-Gi<i class="marquee-dot"></i></span>
-  </div>
-</div>
-
 <!-- WEIGH-IN BOARD -->
-<section class="section">
+<section class="section section-tight">
   <div class="container">
-    <div class="sec-head sec-head--row" data-reveal>
-      <div>
-        <span class="eyebrow"><span class="idx">02 / 03</span>&nbsp;·&nbsp;This Week</span>
-        <h2>Every day.<br>On time.</h2>
-        <p style="color:var(--text-muted);font-size:1rem;margin-top:1rem;">Click any class to book that specific program. Your free trial works for any class on the calendar.</p>
-      </div>
-      <a class="btn btn-ghost" data-cta="lead-modal" href="#">Book A Class <span class="arrow" aria-hidden="true">→</span></a>
-    </div>
-
     <div class="weigh-filters" role="tablist" aria-label="Filter classes" data-reveal>
       <button class="weigh-filter active" data-filter="all">All Classes</button>
       <button class="weigh-filter" data-filter="adults-teens">Adults &amp; Teens</button>
@@ -152,31 +135,37 @@
           <button class="weigh-class" data-class-book data-program="homeschool">
             <span class="weigh-class__time">10:00 AM</span>
             <span class="weigh-class__name">Homeschool Gi<small>Daytime</small></span>
+            <span class="weigh-class__tag">Homeschool</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">12:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens (All Levels)<small>Gi</small></span>
+            <span class="weigh-class__tag">Adults</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="little-kids">
             <span class="weigh-class__time">4:15 PM</span>
             <span class="weigh-class__name">Little Kids (Ages 5-7)<small>Gi</small></span>
+            <span class="weigh-class__tag">Little Kids</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="big-kids">
             <span class="weigh-class__time">5:00 PM</span>
             <span class="weigh-class__name">Big Kids (Ages 8-13)<small>Gi</small></span>
+            <span class="weigh-class__tag">Big Kids</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">6:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens (Basics)<small>Gi</small></span>
+            <span class="weigh-class__tag">Adults</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">7:00 PM</span>
             <span class="weigh-class__name">Advanced Adults &amp; Teens<small>Blue Belts &amp; Above</small></span>
+            <span class="weigh-class__tag">Advanced</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
         </div>
@@ -192,6 +181,7 @@
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">8:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__tag">Adults · No-Gi</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
         </div>
@@ -207,16 +197,19 @@
           <button class="weigh-class" data-class-book data-program="homeschool">
             <span class="weigh-class__time">10:00 AM</span>
             <span class="weigh-class__name">Homeschool No-Gi<small>Daytime</small></span>
+            <span class="weigh-class__tag">Homeschool</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">12:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__tag">Adults · No-Gi</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">8:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__tag">Adults · No-Gi</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
         </div>
@@ -232,6 +225,7 @@
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">8:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens<small>No-Gi · All Levels</small></span>
+            <span class="weigh-class__tag">Adults · No-Gi</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
         </div>
@@ -247,31 +241,37 @@
           <button class="weigh-class" data-class-book data-program="homeschool">
             <span class="weigh-class__time">10:00 AM</span>
             <span class="weigh-class__name">Homeschool Gi<small>Daytime</small></span>
+            <span class="weigh-class__tag">Homeschool</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">12:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens (All Levels)<small>Gi</small></span>
+            <span class="weigh-class__tag">Adults</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="little-kids">
             <span class="weigh-class__time">4:15 PM</span>
             <span class="weigh-class__name">Little Kids (Ages 5-7)<small>Gi</small></span>
+            <span class="weigh-class__tag">Little Kids</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="big-kids">
             <span class="weigh-class__time">5:00 PM</span>
             <span class="weigh-class__name">Big Kids (Ages 8-13)<small>Gi</small></span>
+            <span class="weigh-class__tag">Big Kids</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">6:00 PM</span>
             <span class="weigh-class__name">Adults &amp; Teens (Basics)<small>Gi</small></span>
+            <span class="weigh-class__tag">Adults</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="adults-teens">
             <span class="weigh-class__time">7:00 PM</span>
             <span class="weigh-class__name">Advanced Adults &amp; Teens<small>Blue Belts &amp; Above</small></span>
+            <span class="weigh-class__tag">Advanced</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
         </div>
@@ -287,11 +287,13 @@
           <button class="weigh-class" data-class-book data-program="big-kids">
             <span class="weigh-class__time">9:00 AM</span>
             <span class="weigh-class__name">All Kids Class<small>Gi</small></span>
+            <span class="weigh-class__tag">All Kids</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
           <button class="weigh-class" data-class-book data-program="open-mat">
             <span class="weigh-class__time">3:00 PM</span>
             <span class="weigh-class__name">Open Mat<small>Any Color Gi or No-Gi</small></span>
+            <span class="weigh-class__tag">Open Mat</span>
             <span class="weigh-class__go">Book <span class="arrow" aria-hidden="true">→</span></span>
           </button>
         </div>
@@ -315,7 +317,7 @@
 <section class="section section-tight">
   <div class="container">
     <div class="sec-head" data-reveal>
-      <span class="eyebrow"><span class="idx">03 / 03</span>&nbsp;·&nbsp;How To Read The Schedule</span>
+      <span class="eyebrow"><span class="idx">02 / 02</span>&nbsp;·&nbsp;How To Read The Schedule</span>
       <h2>Pick your track.</h2>
     </div>
 

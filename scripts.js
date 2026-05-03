@@ -130,28 +130,7 @@
     if (!REDUCED && window.gsap && window.ScrollTrigger) {
       gsap.registerPlugin(ScrollTrigger);
 
-      var stack = document.querySelector('.funnel-stack');
-      if (stack) {
-        var cards = gsap.utils.toArray('.funnel-card');
-        if (cards.length > 1 && window.innerWidth > 900) {
-          cards.forEach(function (card, i) {
-            if (i < cards.length - 1) {
-              gsap.to(card, {
-                scale: 0.96,
-                opacity: 0.55,
-                ease: 'none',
-                scrollTrigger: {
-                  trigger: card,
-                  start: 'top top+=' + (72 + 24 + i * 32),
-                  endTrigger: cards[i + 1],
-                  end: 'top top+=' + (72 + 24 + (i + 1) * 32),
-                  scrub: true
-                }
-              });
-            }
-          });
-        }
-      }
+      // Funnel cards now flow naturally — no sticky-stack scrub.
 
       gsap.utils.toArray('[data-parallax]').forEach(function (el) {
         gsap.to(el, {
