@@ -381,17 +381,12 @@
         });
         if (!ok) return;
 
-        var days = [];
-        form.querySelectorAll('.lead-modal__day.active').forEach(function (d) {
-          days.push(d.getAttribute('data-day'));
-        });
         var data = {
           firstName: form.querySelector('#lead-firstName').value.trim(),
           lastName:  form.querySelector('#lead-lastName').value.trim(),
           email:     form.querySelector('#lead-email').value.trim(),
           phone:     form.querySelector('#lead-phone').value.trim(),
-          program:   form.querySelector('#lead-program').value,
-          days:      days
+          program:   form.querySelector('#lead-program').value
         };
         try { sessionStorage.setItem('leadFormData', JSON.stringify(data)); } catch (e) {}
         window.location.href = 'booking.html?program=' + encodeURIComponent(data.program);
@@ -498,18 +493,6 @@
           var prog = row.getAttribute('data-program') || '';
           row.classList.toggle('is-faded', prog !== f);
         });
-      });
-    });
-  })();
-
-  /* ---- Lead modal — preferred days chip multi-select ---- */
-  (function () {
-    var wrap = document.getElementById('leadDays');
-    if (!wrap) return;
-    wrap.querySelectorAll('.lead-modal__day').forEach(function (chip) {
-      chip.addEventListener('click', function (ev) {
-        ev.preventDefault();
-        chip.classList.toggle('active');
       });
     });
   })();
