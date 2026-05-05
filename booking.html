@@ -54,28 +54,32 @@
       <p>Pick a time below that works for you. Once you book, you're all set — we'll see you on the mat. If you picked the wrong class earlier, switch using the program tabs below the calendar.</p>
     </div>
 
-    <!-- CALENDAR WRAP — GHL embeds paste into each data-program div -->
+    <!-- CALENDAR WRAP — GHL widgets are lazy-mounted by scripts.js to avoid
+         GHL's intermittent SSR 500 (X-Frame-Options: DENY) and to limit each
+         visit to one iframe load instead of four. -->
     <div class="booking-calendar-wrap" id="bookingCalendars" data-reveal>
 
-      <div class="booking-calendar" data-program="adults-teens" id="calendar-adults-teens">
-        <iframe src="https://link.conversionbees.com/widget/booking/8yGLBIdtnmMhENNP3YbK" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="6NiGTDpn6fXb6jQN6h48_1777937889497"></iframe>
-        <script src="https://link.conversionbees.com/js/form_embed.js" type="text/javascript"></script>
+      <div class="booking-calendar" data-program="adults-teens" id="calendar-adults-teens"
+           data-widget="https://link.conversionbees.com/widget/booking/8yGLBIdtnmMhENNP3YbK"
+           data-iframe-id="6NiGTDpn6fXb6jQN6h48_1777937889497"></div>
+
+      <div class="booking-calendar" data-program="big-kids" id="calendar-big-kids"
+           data-widget="https://link.conversionbees.com/widget/booking/WdREP3GFeR541oygy5K0"
+           data-iframe-id="6NiGTDpn6fXb6jQN6h48_1777937902986"></div>
+
+      <div class="booking-calendar" data-program="little-kids" id="calendar-little-kids"
+           data-widget="https://link.conversionbees.com/widget/booking/lweBIfYfNQQWbNyNiySa"
+           data-iframe-id="6NiGTDpn6fXb6jQN6h48_1777937921813"></div>
+
+      <div class="booking-calendar" data-program="homeschool" id="calendar-homeschool"
+           data-widget="https://link.conversionbees.com/widget/booking/s6MJ5a9XmY4XAH1ZQBEK"
+           data-iframe-id="6NiGTDpn6fXb6jQN6h48_1777937937288"></div>
+
+      <div class="booking-calendar__fallback" id="bookingFallback" hidden>
+        <p>Calendar didn't load? <a id="bookingFallbackLink" href="#" target="_blank" rel="noopener">Open booking in a new tab</a> or call <a href="tel:8435853465">843-585-3465</a>.</p>
       </div>
 
-      <div class="booking-calendar" data-program="big-kids" id="calendar-big-kids">
-        <iframe src="https://link.conversionbees.com/widget/booking/WdREP3GFeR541oygy5K0" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="6NiGTDpn6fXb6jQN6h48_1777937902986"></iframe>
-        <script src="https://link.conversionbees.com/js/form_embed.js" type="text/javascript"></script>
-      </div>
-
-      <div class="booking-calendar" data-program="little-kids" id="calendar-little-kids">
-        <iframe src="https://link.conversionbees.com/widget/booking/lweBIfYfNQQWbNyNiySa" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="6NiGTDpn6fXb6jQN6h48_1777937921813"></iframe>
-        <script src="https://link.conversionbees.com/js/form_embed.js" type="text/javascript"></script>
-      </div>
-
-      <div class="booking-calendar" data-program="homeschool" id="calendar-homeschool">
-        <iframe src="https://link.conversionbees.com/widget/booking/s6MJ5a9XmY4XAH1ZQBEK" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="6NiGTDpn6fXb6jQN6h48_1777937937288"></iframe>
-        <script src="https://link.conversionbees.com/js/form_embed.js" type="text/javascript"></script>
-      </div>
+      <script src="https://link.conversionbees.com/js/form_embed.js" type="text/javascript"></script>
 
     </div>
 

@@ -421,8 +421,7 @@
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: body,
-              keepalive: true,
-              mode: 'no-cors'
+              keepalive: true
             });
           } catch (e) {}
         });
@@ -523,7 +522,7 @@
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
-          mode: 'no-cors'
+          keepalive: true
         });
       } catch (e) {}
 
@@ -619,27 +618,81 @@
     });
   })();
 
-  /* ---- Booking Page: read program param, show calendar, switch chips ---- */
+  /* ---- Booking Page: read program param, lazy-mount calendar, switch chips ---- */
   var bookingWrap = document.getElementById('bookingCalendars');
   if (bookingWrap) {
     var params    = new URLSearchParams(window.location.search);
     var program   = params.get('program') || 'adults-teens';
     var calendars = bookingWrap.querySelectorAll('.booking-calendar');
     var chips     = document.querySelectorAll('.chip');
+    var fallback  = document.getElementById('bookingFallback');
+    var fallbackLink = document.getElementById('bookingFallbackLink');
+
+    /* Lazy-mount one iframe per .booking-calendar.
+       Why lazy: the GHL booking widget at link.conversionbees.com intermittently
+       returns a Nuxt SSR 500 whose error page has X-Frame-Options: DENY — that
+       blocks the iframe and leaves an empty box. Mounting one iframe at a time
+       (and retrying once on failure) keeps the visible calendar usable. */
+    function mountCalendar(host) {
+      if (!host || host.dataset.mounted === '1') return;
+      var src = host.getAttribute('data-widget');
+      var iframeId = host.getAttribute('data-iframe-id') || '';
+      if (!src) return;
+
+      var iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.id = iframeId;
+      iframe.scrolling = 'no';
+      iframe.style.cssText = 'width:100%;border:none;overflow:hidden;min-height:700px;display:block;';
+      host.appendChild(iframe);
+      host.dataset.mounted = '1';
+
+      // Failure detection: form_embed.js auto-resizes the iframe within ~3s
+      // when the widget loads successfully. If height is still default after
+      // 6s, assume GHL returned an error response and reload once.
+      var attempts = 0;
+      function check() {
+        if (host.dataset.mounted !== '1') return;
+        var h = iframe.getBoundingClientRect().height;
+        if (h > 220) {
+          if (fallback) fallback.hidden = true;
+          return;
+        }
+        attempts++;
+        if (attempts === 1) {
+          // bust GHL's error cache with a cache-busting query param
+          var sep = src.indexOf('?') === -1 ? '?' : '&';
+          iframe.src = src + sep + '_r=' + Date.now();
+          setTimeout(check, 6000);
+        } else {
+          // Surface a fallback link so users can still book
+          if (fallback && fallbackLink) {
+            fallbackLink.href = src;
+            fallback.hidden = false;
+          }
+        }
+      }
+      setTimeout(check, 6000);
+    }
 
     function show(pid) {
       var matched = false;
+      var activeHost = null;
       calendars.forEach(function (c) {
-        if (c.getAttribute('data-program') === pid) { c.classList.add('active'); matched = true; }
+        var isMatch = c.getAttribute('data-program') === pid;
+        if (isMatch) { c.classList.add('active'); matched = true; activeHost = c; }
         else c.classList.remove('active');
       });
       if (!matched && calendars.length) {
         calendars[0].classList.add('active');
         pid = calendars[0].getAttribute('data-program');
+        activeHost = calendars[0];
       }
       chips.forEach(function (c) {
         c.classList.toggle('active', c.getAttribute('data-program') === pid);
       });
+      if (fallback) fallback.hidden = true;
+      mountCalendar(activeHost);
     }
     show(program);
 
