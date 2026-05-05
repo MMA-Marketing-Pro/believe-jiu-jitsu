@@ -381,15 +381,53 @@
         });
         if (!ok) return;
 
+        var program = form.querySelector('#lead-program').value;
+        var programLabels = {
+          'adults-teens': 'Adults & Teens Jiu-Jitsu',
+          'big-kids':     'Big Kids (Ages 8-13)',
+          'little-kids':  'Little Kids (Ages 5-7)',
+          'homeschool':   'Homeschool Jiu-Jitsu'
+        };
         var data = {
-          firstName: form.querySelector('#lead-firstName').value.trim(),
-          lastName:  form.querySelector('#lead-lastName').value.trim(),
-          email:     form.querySelector('#lead-email').value.trim(),
-          phone:     form.querySelector('#lead-phone').value.trim(),
-          program:   form.querySelector('#lead-program').value
+          firstName:    form.querySelector('#lead-firstName').value.trim(),
+          lastName:     form.querySelector('#lead-lastName').value.trim(),
+          email:        form.querySelector('#lead-email').value.trim(),
+          phone:        form.querySelector('#lead-phone').value.trim(),
+          program:      program,
+          programLabel: programLabels[program] || program,
+          source:       'believe-jiu-jitsu-website',
+          submittedAt:  new Date().toISOString()
         };
         try { sessionStorage.setItem('leadFormData', JSON.stringify(data)); } catch (e) {}
-        window.location.href = 'booking.html?program=' + encodeURIComponent(data.program);
+
+        var GHL = {
+          adult1:      'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/01573a00-703a-4277-ac1b-0c70fc58926b',
+          adult2:      'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/87d02303-2957-4fe8-be6e-709c42851898',
+          kids1:       'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/e176c7e5-166b-47bb-a084-8b4b66afcf76',
+          kids2:       'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/0e2386b2-a8e0-4cfd-820b-f3af9f8c6728',
+          homeschool1: 'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/c1d109a7-10d2-44a1-8f1c-488566754708'
+        };
+        var webhookRoutes = {
+          'adults-teens': [GHL.adult1, GHL.adult2],
+          'big-kids':     [GHL.kids1,  GHL.kids2],
+          'little-kids':  [GHL.kids1,  GHL.kids2],
+          'homeschool':   [GHL.homeschool1, GHL.kids2]
+        };
+        var hooks = webhookRoutes[program] || [];
+        var body = JSON.stringify(data);
+        hooks.forEach(function (url) {
+          try {
+            fetch(url, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: body,
+              keepalive: true,
+              mode: 'no-cors'
+            });
+          } catch (e) {}
+        });
+
+        window.location.href = 'booking.html?program=' + encodeURIComponent(program);
       });
     }
   }
