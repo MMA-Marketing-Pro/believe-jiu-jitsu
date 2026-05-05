@@ -87,7 +87,7 @@
   <div class="container">
     <div class="page-crumb"><a href="index.html">Home</a> <span aria-hidden="true">/</span> <span>Contact</span></div>
     <span class="eyebrow"><span class="idx">01 / 03</span>&nbsp;·&nbsp;Talk to the academy</span>
-    <h1 style="margin-top:1rem;">Call. Email.<br>Walk in.</h1>
+    <h1 class="page-header__title--md" style="margin-top:1rem;">Call. Email.<br>Walk in.</h1>
     <p class="page-header__lead">Got a question about our programs, the schedule, or bringing your kids to class? We're happy to talk — or the fastest path is to just book a free trial and see us in person.</p>
     <div class="page-header__ctas">
       <a class="btn btn-primary" data-cta="lead-modal" data-magnetic href="#">Book Free Trial <span class="arrow" aria-hidden="true">→</span></a>
@@ -117,42 +117,43 @@
 
       <div class="contact-form">
         <h3>Send us a message.</h3>
-        <p>For the fastest response, book a free class below. For general questions, fill this out.</p>
+        <p>Tell us what you're looking for and we'll be in touch shortly.</p>
 
-        <div class="form-row">
-          <div class="form-field">
-            <label for="cf-firstName">First Name</label>
-            <input id="cf-firstName" type="text" autocomplete="given-name">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="cf-firstName">First Name</label>
+              <input id="cf-firstName" type="text" autocomplete="given-name" data-required>
+            </div>
+            <div class="form-field">
+              <label for="cf-lastName">Last Name</label>
+              <input id="cf-lastName" type="text" autocomplete="family-name" data-required>
+            </div>
           </div>
           <div class="form-field">
-            <label for="cf-lastName">Last Name</label>
-            <input id="cf-lastName" type="text" autocomplete="family-name">
+            <label for="cf-email">Email</label>
+            <input id="cf-email" type="email" autocomplete="email" data-required>
           </div>
-        </div>
-        <div class="form-field">
-          <label for="cf-email">Email</label>
-          <input id="cf-email" type="email" autocomplete="email">
-        </div>
-        <div class="form-field">
-          <label for="cf-phone">Phone</label>
-          <input id="cf-phone" type="tel" autocomplete="tel" placeholder="(###) ###-####">
-        </div>
-        <div class="form-field">
-          <label for="cf-interest">I'm interested in</label>
-          <select id="cf-interest">
-            <option value="adults-teens">Adults &amp; Teens Jiu-Jitsu</option>
-            <option value="big-kids">Big Kids (Ages 8-13)</option>
-            <option value="little-kids">Little Kids (Ages 5-7)</option>
-            <option value="homeschool">Homeschool Jiu-Jitsu</option>
-            <option value="general">General Question</option>
-          </select>
-        </div>
-        <div class="form-field">
-          <label for="cf-message">Message</label>
-          <textarea id="cf-message" rows="5" placeholder="Tell us what you're looking for…"></textarea>
-        </div>
-        <button type="button" class="btn btn-primary btn-block" data-cta="lead-modal">Book A Free Trial Instead <span class="arrow" aria-hidden="true">→</span></button>
-        <p style="font-family:var(--ff-mono);font-size:0.66rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--text-faint);text-align:center;margin-top:0.25rem;">Fastest response: book a trial above</p>
+          <div class="form-field">
+            <label for="cf-phone">Phone</label>
+            <input id="cf-phone" type="tel" autocomplete="tel" placeholder="(###) ###-####" data-required>
+          </div>
+          <div class="form-field">
+            <label for="cf-interest">I'm interested in</label>
+            <select id="cf-interest">
+              <option value="adults-teens">Adults &amp; Teens Jiu-Jitsu</option>
+              <option value="big-kids">Big Kids (Ages 8-13)</option>
+              <option value="little-kids">Little Kids (Ages 5-7)</option>
+              <option value="homeschool">Homeschool Jiu-Jitsu</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" rows="5" placeholder="Tell us what you're looking for…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Submit <span class="arrow" aria-hidden="true">→</span></button>
+          <p class="contact-form__status" id="contactFormStatus" role="status" aria-live="polite" hidden></p>
+        </form>
       </div>
     </div>
   </div>

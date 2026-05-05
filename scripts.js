@@ -451,6 +451,90 @@
     });
   });
 
+  /* ---- Contact form → GHL webhook (separate from lead-modal hooks) ---- */
+  (function () {
+    var cForm = document.getElementById('contactForm');
+    if (!cForm) return;
+
+    var cPhone = cForm.querySelector('#cf-phone');
+    if (cPhone) {
+      cPhone.addEventListener('input', function (ev) {
+        var v = ev.target.value.replace(/\D/g, '').slice(0, 10);
+        var out = v;
+        if (v.length > 6)      out = '(' + v.slice(0,3) + ') ' + v.slice(3,6) + '-' + v.slice(6);
+        else if (v.length > 3) out = '(' + v.slice(0,3) + ') ' + v.slice(3);
+        else if (v.length > 0) out = '(' + v;
+        ev.target.value = out;
+      });
+    }
+
+    var CONTACT_HOOK = 'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/f092dd93-8df8-4fb4-8a8b-a889ca9d5d7b';
+    var interestLabels = {
+      'adults-teens': 'Adults & Teens Jiu-Jitsu',
+      'big-kids':     'Big Kids (Ages 8-13)',
+      'little-kids':  'Little Kids (Ages 5-7)',
+      'homeschool':   'Homeschool Jiu-Jitsu'
+    };
+    var status = document.getElementById('contactFormStatus');
+    var submitBtn = cForm.querySelector('button[type="submit"]');
+
+    function setStatus(msg, kind) {
+      if (!status) return;
+      status.textContent = msg;
+      status.hidden = false;
+      status.classList.remove('is-success', 'is-error');
+      if (kind) status.classList.add('is-' + kind);
+    }
+
+    cForm.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var fields = cForm.querySelectorAll('[data-required]');
+      var ok = true;
+      fields.forEach(function (f) {
+        var val = (f.value || '').trim();
+        var wrap = f.closest('.form-field');
+        if (!val) { ok = false; if (wrap) wrap.classList.add('has-error'); }
+        else if (wrap) { wrap.classList.remove('has-error'); }
+      });
+      if (!ok) {
+        setStatus('Please fill in all required fields.', 'error');
+        return;
+      }
+
+      var interest = cForm.querySelector('#cf-interest').value;
+      var data = {
+        firstName:     cForm.querySelector('#cf-firstName').value.trim(),
+        lastName:      cForm.querySelector('#cf-lastName').value.trim(),
+        email:         cForm.querySelector('#cf-email').value.trim(),
+        phone:         cForm.querySelector('#cf-phone').value.trim(),
+        interest:      interest,
+        interestLabel: interestLabels[interest] || interest,
+        message:       cForm.querySelector('#cf-message').value.trim(),
+        source:        'believe-jiu-jitsu-website',
+        formType:      'contact',
+        submittedAt:   new Date().toISOString()
+      };
+
+      if (submitBtn) submitBtn.disabled = true;
+      setStatus('Sending…', null);
+
+      try {
+        fetch(CONTACT_HOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          mode: 'no-cors'
+        });
+      } catch (e) {}
+
+      setTimeout(function () {
+        setStatus("Thanks — we'll get back to you within one business day.", 'success');
+        cForm.reset();
+        if (submitBtn) submitBtn.disabled = false;
+      }, 400);
+    });
+  })();
+
   /* ---- FAQ accordion ---- */
   document.querySelectorAll('.faq__item').forEach(function (item) {
     var btn = item.querySelector('.faq__q');

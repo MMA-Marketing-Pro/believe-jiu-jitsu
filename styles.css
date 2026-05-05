@@ -973,21 +973,21 @@ p { max-width: 64ch; }
    9. TRIAL FUNNEL — sticky pinned stack
    ------------------------------------------------------------ */
 .funnel-intro {
-  padding-block: clamp(72px, 10vw, 128px);
+  padding-block: clamp(56px, 8vw, 96px);
 }
 .funnel-stack {
   position: relative;
 }
 .funnel-card {
-  padding: clamp(32px, 5vw, 64px);
+  padding: clamp(24px, 3.5vw, 48px);
   background: var(--bg-card);
   border: 1px solid var(--border);
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   align-items: center;
-  gap: clamp(32px, 5vw, 72px);
+  gap: clamp(24px, 3.5vw, 56px);
   overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 .funnel-card:nth-of-type(2) { background: var(--bg-elev); }
 .funnel-card:nth-of-type(3) { background: #191919; }
@@ -995,31 +995,31 @@ p { max-width: 64ch; }
 .funnel-card__num {
   font-family: var(--ff-display);
   font-weight: 900;
-  font-size: clamp(9rem, 22vw, 20rem);
+  font-size: clamp(6.5rem, 16vw, 14rem);
   line-height: 0.82;
   letter-spacing: -0.04em;
   color: var(--text-primary);
   opacity: 0.08;
 }
-.funnel-card__body { display: flex; flex-direction: column; gap: 1.2rem; max-width: 560px; }
+.funnel-card__body { display: flex; flex-direction: column; gap: 0.9rem; max-width: 560px; }
 .funnel-card__body .eyebrow { color: var(--text-primary); }
 .funnel-card__body h3 {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.6rem, 3.8vw, 2.8rem);
   line-height: 0.95;
 }
-.funnel-card__body p { color: var(--text-muted); font-size: 1.05rem; max-width: 50ch; }
-.funnel-card__body .cta-row { margin-top: 0.5rem; }
+.funnel-card__body p { color: var(--text-muted); font-size: 0.95rem; max-width: 50ch; }
+.funnel-card__body .cta-row { margin-top: 0.35rem; }
 
 @media (max-width: 900px) {
   .funnel-card {
     grid-template-columns: 1fr;
     align-items: flex-start;
     min-height: auto;
-    padding: 32px 24px;
+    padding: 24px 20px;
     position: relative;
     top: auto !important;
   }
-  .funnel-card__num { font-size: 7rem; opacity: 0.12; }
+  .funnel-card__num { font-size: 5rem; opacity: 0.12; }
 }
 
 /* ------------------------------------------------------------
@@ -1838,6 +1838,9 @@ p { max-width: 64ch; }
   letter-spacing: -0.025em;
   max-width: 18ch;
 }
+.page-header h1.page-header__title--md {
+  font-size: clamp(2.4rem, 7vw, 6rem);
+}
 .page-header__lead {
   color: var(--text-muted);
   max-width: 62ch;
@@ -2029,6 +2032,22 @@ p { max-width: 64ch; }
   background: rgba(0,216,92,0.06);
 }
 .form-field select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%238E8E8E' d='M0 0h10L5 6z'/></svg>"); background-repeat: no-repeat; background-position: right 0.9rem center; padding-right: 2rem; }
+
+.form-field.has-error input,
+.form-field.has-error select,
+.form-field.has-error textarea { border-color: #FF5C5C; }
+
+.contact-form__status {
+  margin-top: 0.85rem;
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--text-muted);
+}
+.contact-form__status.is-success { color: var(--cta); }
+.contact-form__status.is-error   { color: #FF5C5C; }
 
 @media (max-width: 780px) {
   .contact-split, .form-row { grid-template-columns: 1fr; }
