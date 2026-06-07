@@ -70,7 +70,7 @@
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: 'grand_opening_reserve', audience: data.audience, visitDay: data.visitDay });
     } catch (e) {}
-    try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'Grand Opening June Visit' }); } catch (e) {}
+    try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: 'Grand Opening June Visit', content_category: data.audienceLabel || 'Grand Opening', source: 'believe-grand-opening-lp' }); } catch (e) {}
     try { if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { campaign: 'grand-opening-june' }); } catch (e) {}
   }
 
@@ -131,7 +131,7 @@
       var body = JSON.stringify(data);
       hooks.forEach(function (url) {
         try {
-          fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true });
+          fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
         } catch (e) {}
       });
 

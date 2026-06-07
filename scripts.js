@@ -422,11 +422,16 @@
               headers: { 'Content-Type': 'application/json' },
               body: body,
               keepalive: true
-            });
+            }).catch(function () {});
           } catch (e) {}
         });
 
-        window.location.href = 'booking.html?program=' + encodeURIComponent(program);
+        // Meta Pixel — fire Lead, then give it a beat to send before navigating away
+        try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: data.programLabel || 'Free Trial', content_category: 'Free Trial', source: 'lead-modal' }); } catch (e) {}
+
+        setTimeout(function () {
+          window.location.href = 'booking.html?program=' + encodeURIComponent(program);
+        }, 250);
       });
     }
   }
@@ -523,8 +528,11 @@
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
           keepalive: true
-        });
+        }).catch(function () {});
       } catch (e) {}
+
+      // Meta Pixel — contact form lead
+      try { if (typeof window.fbq === 'function') window.fbq('track', 'Lead', { content_name: data.interestLabel || 'Contact', content_category: 'Contact Form', source: 'contact-form' }); } catch (e) {}
 
       setTimeout(function () {
         setStatus("Thanks — we'll get back to you within one business day.", 'success');
