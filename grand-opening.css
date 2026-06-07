@@ -80,6 +80,8 @@
           background-clip: text;
   color: transparent;
 }
+/* single high-contrast green emphasis word in the headline */
+.go-hero__title em { font-style: normal; color: var(--cta); }
 .go-hero__title .mask-line { display: block; overflow: hidden; }
 .go-hero__title .mask-line > span {
   display: block;
@@ -95,11 +97,12 @@
 }
 
 .go-hero__sub {
-  color: var(--text-muted);
-  font-size: clamp(1rem, 1.25vw, 1.15rem);
-  max-width: 54ch;
-  line-height: 1.6;
+  color: rgba(245, 245, 245, 0.82);
+  font-size: clamp(1.02rem, 1.25vw, 1.18rem);
+  max-width: 52ch;
+  line-height: 1.62;
 }
+.go-hero__sub strong { color: var(--text-primary); font-weight: 600; }
 .go-hero__sub .keyline {
   display: inline-block;
   border: 1px solid var(--cta);
@@ -203,9 +206,13 @@
   gap: 0.9rem;
 }
 .go-form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-@media (max-width: 400px) { .go-form__row { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .go-form__row { grid-template-columns: 1fr; } }
 
 /* uses shared .form-field styling from styles.css for inputs/selects */
+/* min-width:0 lets inputs shrink inside the grid (default input width would blow out the layout) */
+.go-form .form-field { min-width: 0; }
+.go-form .form-field input,
+.go-form .form-field select { min-width: 0; width: 100%; }
 .go-form .form-field.has-error input,
 .go-form .form-field.has-error select { border-color: #FF5C5C; }
 
@@ -724,6 +731,9 @@
 .go-track__cta { margin-top: clamp(36px, 4.5vw, 60px); justify-content: center; }
 @media (max-width: 1080px) {
   .first-class__track.go-track-4 { grid-template-columns: 1fr; }
+  /* keep steps stacked vertically (our markup has no .fc-step__body wrapper) */
+  .first-class__track.go-track-4 .fc-step { flex-direction: column; gap: 0.8rem; }
+  .first-class__track.go-track-4 .fc-step__num { min-width: 0; }
 }
 
 /* ------------------------------------------------------------
@@ -883,6 +893,26 @@
 @media (max-width: 560px) {
   .go-footer .footer-top { grid-template-columns: 1fr; }
   .go-footer .footer-brand { grid-column: span 1; }
+}
+
+/* ------------------------------------------------------------
+   MOBILE OVERFLOW FIX
+   Long CTA labels must wrap instead of forcing page width.
+   .btn ships with white-space:nowrap; on phones that makes
+   "Claim Your Special Introductory Rate" ~550px wide, which
+   blows out the layout viewport and clips body text on the right.
+   ------------------------------------------------------------ */
+@media (max-width: 600px) {
+  .go-page .cta-row { width: 100%; }
+  .go-page .cta-row .btn {
+    white-space: normal;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
+    line-height: 1.25;
+  }
+  /* keep text links inline, not full-width blocks */
+  .go-page .cta-row .btn-link { width: auto; white-space: normal; }
 }
 
 /* ------------------------------------------------------------
