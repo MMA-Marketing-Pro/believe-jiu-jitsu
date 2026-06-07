@@ -1,37 +1,20 @@
 /* ============================================================
    BELIEVE JIU JITSU — GRAND OPENING LP
    Reservation forms → GHL, June countdown, CTA scroll-to-form.
-   Reuses the same GHL pipelines as the main site lead modal,
-   tagged with the grand-opening campaign + visit-day fields.
+   Uses dedicated grand-opening webhooks, separate from the
+   main site lead modal in scripts.js.
    ============================================================ */
 
 (function () {
   'use strict';
 
-  /* ---- GHL webhook endpoints (shared with main-site lead modal) ---- */
-  var GHL = {
-    adult1:      'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/01573a00-703a-4277-ac1b-0c70fc58926b',
-    adult2:      'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/87d02303-2957-4fe8-be6e-709c42851898',
-    kids1:       'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/e176c7e5-166b-47bb-a084-8b4b66afcf76',
-    kids2:       'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/0e2386b2-a8e0-4cfd-820b-f3af9f8c6728'
-  };
-
-  /* audience → which GHL webhooks fire */
-  var webhookRoutes = {
-    'adult':       [GHL.adult1, GHL.adult2],
-    'big-kids':    [GHL.kids1,  GHL.kids2],
-    'little-kids': [GHL.kids1,  GHL.kids2],
-    'family':      [GHL.adult1, GHL.kids1],
-    'not-sure':    [GHL.adult1, GHL.adult2]
-  };
+  var LEAD_ENDPOINT = '/api/grand-opening-lead';
 
   /* audience → existing site "program" key (keeps GHL automations compatible) */
   var programMap = {
     'adult':       'adults-teens',
     'big-kids':    'big-kids',
-    'little-kids': 'little-kids',
-    'family':      'adults-teens',
-    'not-sure':    'adults-teens'
+    'little-kids': 'little-kids'
   };
   var programLabels = {
     'adults-teens': 'Adults & Teens Jiu-Jitsu',
@@ -41,9 +24,7 @@
   var audienceLabels = {
     'adult':       'Adult / Teen Jiu-Jitsu',
     'big-kids':    'Big Kids (Ages 8-13)',
-    'little-kids': 'Little Kids (Ages 5-7)',
-    'family':      'Parent + Child / Family',
-    'not-sure':    'Not sure yet'
+    'little-kids': 'Little Kids (Ages 5-7)'
   };
   var visitDayLabels = {
     'tuesday':       'Tuesday 4-7 PM',
@@ -74,12 +55,32 @@
     try { if (typeof window.gtag === 'function') window.gtag('event', 'generate_lead', { campaign: 'grand-opening-june' }); } catch (e) {}
   }
 
+  function submitLead(data) {
+    return fetch(LEAD_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+      keepalive: true
+    }).then(function (response) {
+      if (!response.ok) throw new Error('Lead submission failed');
+      return response;
+    });
+  }
+
   /* ---- Wire each reservation form ---- */
   function wireForm(form) {
     var col      = form.parentElement;
     var success  = col ? col.querySelector('[data-go-success]') : null;
     var submitBtn = form.querySelector('.go-form__submit');
+    var originalSubmitHtml = submitBtn ? submitBtn.innerHTML : '';
     var phone    = form.querySelector('input[type="tel"]');
+    var formStartedAt = null;
+    function markFormStarted() {
+      if (!formStartedAt) formStartedAt = Date.now();
+    }
+    ['focusin', 'input', 'pointerdown', 'keydown'].forEach(function (eventName) {
+      form.addEventListener(eventName, markFormStarted, { once: true });
+    });
     if (phone) phone.addEventListener('input', maskPhone);
 
     form.addEventListener('submit', function (ev) {
@@ -110,6 +111,8 @@
         lastName:      form.querySelector('[name="lastName"]').value.trim(),
         email:         form.querySelector('[name="email"]').value.trim(),
         phone:         form.querySelector('[name="phone"]').value.trim(),
+        companyWebsite: (form.querySelector('[name="companyWebsite"]') || {}).value || '',
+        formStartedAt:  formStartedAt || Date.now(),
         audience:      audience,
         audienceLabel: audienceLabels[audience] || audience,
         visitDay:      visitDay,
@@ -124,31 +127,33 @@
         submittedAt:   new Date().toISOString()
       };
 
-      /* fire GHL webhooks (deduped) */
-      var hooks = (webhookRoutes[audience] || webhookRoutes['not-sure']).filter(function (url, i, arr) {
-        return arr.indexOf(url) === i;
-      });
       var body = JSON.stringify(data);
-      hooks.forEach(function (url) {
-        try {
-          fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: body, keepalive: true }).catch(function () {});
-        } catch (e) {}
-      });
 
-      try { sessionStorage.setItem('goLeadData', body); } catch (e) {}
-      trackLead(data);
-
-      if (submitBtn) { submitBtn.disabled = true; }
-
-      /* swap to success state */
-      if (success) {
-        var greet = success.querySelector('[data-go-greet]');
-        if (greet) greet.textContent = data.firstName || 'friend';
-        form.hidden = true;
-        form.style.display = 'none';
-        success.hidden = false;
-        try { success.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Sending...';
       }
+
+      submitLead(data).then(function () {
+        try { sessionStorage.setItem('goLeadData', body); } catch (e) {}
+        trackLead(data);
+
+        /* swap to success state */
+        if (success) {
+          var greet = success.querySelector('[data-go-greet]');
+          if (greet) greet.textContent = data.firstName || 'friend';
+          form.hidden = true;
+          form.style.display = 'none';
+          success.hidden = false;
+          try { success.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+        }
+      }).catch(function () {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalSubmitHtml;
+        }
+        window.alert('Sorry, something went wrong. Please call or text 843-585-3465 and we will help you reserve your visit.');
+      });
     });
   }
 
