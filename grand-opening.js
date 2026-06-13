@@ -27,9 +27,9 @@
     'little-kids': 'Little Kids (Ages 5-7)'
   };
   var visitDayLabels = {
-    'tuesday':       'Tuesday 4-7 PM',
-    'wednesday':     'Wednesday 4-7 PM',
-    'thursday':      'Thursday 4-7 PM',
+    'tuesday':       'Tuesday 10 AM-12:30 PM',
+    'wednesday':     'Wednesday 10 AM-12:30 PM',
+    'thursday':      'Thursday 10 AM-12:30 PM',
     'no-preference': 'No preference'
   };
 
