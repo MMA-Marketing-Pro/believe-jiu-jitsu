@@ -3,9 +3,9 @@
   "slug": "believe-jiu-jitsu",
   "website": "https://believejiujitsu.com",
   "businessType": "Brazilian Jiu-Jitsu Academy (Gi & No-Gi)",
-  "city": "Summerville",
+  "city": "Moncks Corner",
   "state": "SC",
-  "tagline": "The #1 Jiu Jitsu Academy in Summerville, SC",
+  "tagline": "The #1 Jiu Jitsu Academy in Moncks Corner, SC",
   "siteStructure": {
     "totalPages": 6,
     "isSinglePage": false,
@@ -21,7 +21,7 @@
   "pageContent": {
     "home": {
       "heroHeadline": "Become an Expert at Self-Defense Using Jiu-Jitsu",
-      "heroSubheadline": "The #1 Brazilian Jiu-Jitsu Academy in Summerville, SC — training kids, teens, and adults in Gi & No-Gi.",
+      "heroSubheadline": "The #1 Brazilian Jiu-Jitsu Academy in Moncks Corner, SC — training kids, teens, and adults in Gi & No-Gi.",
       "heroCTA": "Book Your Free Class",
       "trialSteps": [
         "Click 'Book Your Free Class' and fill out the form",
@@ -44,7 +44,7 @@
     },
     "about": {
       "heading": "About Believe Jiu Jitsu",
-      "subheading": "Learn from the best coaches in Summerville, SC",
+      "subheading": "Learn from the best coaches in Moncks Corner, SC",
       "headInstructor": {
         "name": "Professor Randy Gonzales",
         "role": "Head Instructor & Co-Owner",
@@ -56,7 +56,7 @@
         "name": "Coach Flavia",
         "role": "Co-Owner"
       },
-      "philosophy": "Whether you're a casual practitioner or a dedicated competitor, Believe Jiu Jitsu offers a welcoming, family-oriented environment with something for everyone. Conveniently located inside Charleston Family Fitness in Summerville, SC."
+      "philosophy": "Whether you're a casual practitioner or a dedicated competitor, Believe Jiu Jitsu offers a welcoming, family-oriented environment with something for everyone. Conveniently located on S. Live Oak Dr (Hwy 17A) in Moncks Corner, SC."
     },
     "schedule": {
       "heading": "Class Schedule",
@@ -100,8 +100,8 @@
       "heading": "Contact Believe Jiu Jitsu",
       "phone": "843-585-3465",
       "email": "Flavia@believejiujitsu.com",
-      "address": "117 N. Creek Dr. Unit B, Summerville, SC 29486",
-      "googleMapQuery": "117 N. Creek Dr. Unit B, Summerville, SC 29486"
+      "address": "3514 S. Live Oak Dr, Unit D, Moncks Corner, SC 29461",
+      "googleMapQuery": "3514 S. Live Oak Dr, Unit D, Moncks Corner, SC 29461"
     }
   },
   "programs": [

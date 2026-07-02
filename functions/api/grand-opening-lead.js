@@ -131,7 +131,7 @@ export async function onRequestPost({ request, env }) {
     visitDayLabel: clean(data.visitDayLabel),
     campaign: 'grand-opening-june',
     offer: 'June Introductory Rate',
-    location: '3514 S. Live Oak Dr, Unit D, Summerville, SC',
+    location: '3514 S. Live Oak Dr, Unit D, Moncks Corner, SC 29461',
     source: 'believe-grand-opening-lp',
     formId: clean(data.formId) || 'grand-opening',
     submittedAt: clean(data.submittedAt) || new Date().toISOString()

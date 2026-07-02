@@ -121,7 +121,7 @@
         programLabel:  programLabels[program] || program,
         campaign:      'grand-opening-june',
         offer:         'June Introductory Rate',
-        location:      '3514 S. Live Oak Dr, Unit D, Summerville, SC',
+        location:      '3514 S. Live Oak Dr, Unit D, Moncks Corner, SC 29461',
         source:        'believe-grand-opening-lp',
         formId:        form.getAttribute('data-go-form-id') || 'grand-opening',
         submittedAt:   new Date().toISOString()
