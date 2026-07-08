@@ -18,13 +18,13 @@
   };
   var programLabels = {
     'adults-teens': 'Adults & Teens Jiu-Jitsu',
-    'big-kids':     'Big Kids (Ages 8-13)',
-    'little-kids':  'Little Kids (Ages 5-7)'
+    'big-kids':     'Big Believers (Ages 9-13)',
+    'little-kids':  'Little Believers (Ages 5-8)'
   };
   var audienceLabels = {
     'adult':       'Adult / Teen Jiu-Jitsu',
-    'big-kids':    'Big Kids (Ages 8-13)',
-    'little-kids': 'Little Kids (Ages 5-7)'
+    'big-kids':    'Big Believers (Ages 9-13)',
+    'little-kids': 'Little Believers (Ages 5-8)'
   };
   var visitDayLabels = {
     'tuesday':       'Tuesday 10 AM-12:30 PM',

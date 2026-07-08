@@ -384,8 +384,8 @@
         var program = form.querySelector('#lead-program').value;
         var programLabels = {
           'adults-teens': 'Adults & Teens Jiu-Jitsu',
-          'big-kids':     'Big Kids (Ages 8-13)',
-          'little-kids':  'Little Kids (Ages 5-7)',
+          'big-kids':     'Big Believers (Ages 9-13)',
+          'little-kids':  'Little Believers (Ages 5-8)',
           'homeschool':   'Homeschool Jiu-Jitsu'
         };
         var data = {
@@ -475,8 +475,8 @@
     var CONTACT_HOOK = 'https://services.leadconnectorhq.com/hooks/f5jAOT2OIWLDmpIPyszx/webhook-trigger/f092dd93-8df8-4fb4-8a8b-a889ca9d5d7b';
     var interestLabels = {
       'adults-teens': 'Adults & Teens Jiu-Jitsu',
-      'big-kids':     'Big Kids (Ages 8-13)',
-      'little-kids':  'Little Kids (Ages 5-7)',
+      'big-kids':     'Big Believers (Ages 9-13)',
+      'little-kids':  'Little Believers (Ages 5-8)',
       'homeschool':   'Homeschool Jiu-Jitsu'
     };
     var status = document.getElementById('contactFormStatus');

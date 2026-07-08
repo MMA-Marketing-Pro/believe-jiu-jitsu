@@ -8,14 +8,14 @@ const ROUTES = {
   'big-kids': {
     env: 'GHL_WEBHOOK_BIG_KIDS',
     program: 'big-kids',
-    audienceLabel: 'Big Kids (Ages 8-13)',
-    programLabel: 'Big Kids (Ages 8-13)'
+    audienceLabel: 'Big Believers (Ages 9-13)',
+    programLabel: 'Big Believers (Ages 9-13)'
   },
   'little-kids': {
     env: 'GHL_WEBHOOK_LITTLE_KIDS',
     program: 'little-kids',
-    audienceLabel: 'Little Kids (Ages 5-7)',
-    programLabel: 'Little Kids (Ages 5-7)'
+    audienceLabel: 'Little Believers (Ages 5-8)',
+    programLabel: 'Little Believers (Ages 5-8)'
   }
 };
 
